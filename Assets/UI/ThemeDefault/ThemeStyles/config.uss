@@ -1,1 +1,36 @@
-VisualElement {}
+:root{
+  --text-color-base: var(--primary-dark-60);
+  --font-size-small: 12px;
+  --font-size-base: 16px;
+  --font-size-large: 20px;
+
+  --radius-base: 8px;
+  --radius-large: 16px;
+  --border-width-small: 1px;
+  --border-width-base: 2px;
+  --border-width-large: 4px;
+
+  --margin-base:8px;
+  --margin-large:16px;
+
+  --padding-small:4px;
+  --padding-base:8px;
+  --padding-large:16px;
+
+  
+  --button-pressed-transition: 0.1s;
+  --button-square-base: 75px;
+  --button-square-icon-size: 55px;
+  --button-square-shadow-position-bottom: -10px;
+  --little-balloon-height: 15px;
+  --little-balloon-width: 20px;
+  --button-square-bottom-border-height: 8px;
+
+  --icon-width-base: 55px;
+  --icon-width-small: 35px;
+  --icon-width-large: 75px;
+
+  /*these 2 variable will be set when you decide how much your header and footer has height as pixels it is automaticly added to each main tab menu content. eg SettingsPanel, HomePanel, ShopPanel... to not to overlay these panels' content over the header or footer.*/
+  --header-top-offset: 35px; /*İt is variable related to device that we base (iphone 12 at the moment). Most device has a dead area on top of screen beacuse of camera placement.*/
+  --footer-bottom-offset: 15px; 
+}

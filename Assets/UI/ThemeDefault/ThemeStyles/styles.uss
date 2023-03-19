@@ -1,1 +1,356 @@
-VisualElement {}
+*{
+  color: var(--text-color-base);
+  font-size: var(--font-size-base)
+}
+
+#BottomBar{
+  justify-content: space-between;
+}
+
+.container{
+  padding: var(--padding-base);
+}
+
+
+
+.btn{
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  border-radius: var(--radius-base);
+  background-color: var(--grey);
+  border-color: var(--grey-dark-20);
+}
+
+.btn #buttonText{
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  font-size: var(--font-size-large); 
+  display: flex;
+}
+
+.btn-square{
+  width: var(--button-square-base);
+  height: var(--button-square-base);
+}
+
+.btn #fill {
+  flex-grow: 1;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--grey);
+  border-width: var(--border-width-small);
+  border-radius: var(--radius-base);
+  transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
+  justify-content:center;
+  align-items:center;
+  
+}
+
+.btn #mask{
+  flex-grow: 1; 
+  position: absolute; 
+  left: -48px; 
+  top: -120px; 
+  width: 172px; 
+  height: 284px; 
+  rotate: 60deg; 
+  overflow: hidden; 
+  border-top-left-radius: 125px; 
+  border-bottom-left-radius: 125px; 
+  border-top-right-radius: 125px; 
+  border-bottom-right-radius: 125px;
+}
+
+.btn #icon-area #mask-icon-area{
+  border-width:3px 3px;
+  width: var(--button-square-base);
+  height: var(--button-square-base);
+  left:85px;
+  top: 27px;
+  flex-grow: 1; 
+  background-color: rgba(0, 0, 0, 0); 
+  position: absolute; 
+  rotate: -60deg;
+}
+
+.btn #icon-area{
+  width: var(--button-square-base);
+  height: var(--button-square-base);
+  flex-grow: 1; 
+  position: absolute; 
+  -unity-background-scale-mode: scale-to-fit;
+}
+
+.btn #icon{
+  width: var(--button-square-icon-size);
+  height: var(--button-square-icon-size);
+  min-width: var(--button-square-icon-size);
+  min-height: var(--button-square-icon-size);
+  max-width: var(--button-square-icon-size);
+  max-height: var(--button-square-icon-size);
+  margin:auto;
+   -unity-background-image-tint-color: var(--grey-dark-20);
+  transition: -unity-background-image-tint-color var(--button-pressed-transition) linear;
+  flex-grow: 1; 
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.btn #icon-area #mask-icon{
+  -unity-background-image-tint-color: var(--grey);
+  width: var(--button-square-icon-size);
+  height: var(--button-square-icon-size);
+  min-width: var(--button-square-icon-size);
+  min-height: var(--button-square-icon-size);
+  max-width: var(--button-square-icon-size);
+  max-height: var(--button-square-icon-size);
+  margin:auto;
+  flex-grow: 1; 
+  background-color: rgba(0, 0, 0, 0);
+  position: relative; 
+  rotate: 0;
+}
+
+.btn #shadow{
+  border-radius: var(--radius-base);
+  background-color: var(--grey-dark-20);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom:  var(--button-square-shadow-position-bottom);
+  height: var(--button-square-base);
+  display: flex;
+}
+
+.btn #balloon{
+  background-color: var(--grey-light-80);
+  border-radius: 0px;
+  flex-grow: 1;
+  position: absolute;
+  left: -35%;
+  top: -35%;
+  width: 100%;
+  height: 100%;
+}
+
+.btn #balloon-little{
+  background-color: var(--grey-dark-20);
+  flex-grow: 1; 
+  position: absolute; 
+  left: 10%; 
+  top: 40%; 
+  width: var(--little-balloon-width); 
+  height: var(--little-balloon-height); 
+  border-top-left-radius: 100px; 
+  border-bottom-left-radius: 100px; 
+  border-top-right-radius: 100px; 
+  border-bottom-right-radius: 100px; 
+  rotate: -45deg;
+}
+
+.btn #extraborder {
+  flex-grow: 1;
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0);
+  border-width: var(--border-width-base) var(--border-width-small) var(--button-square-bottom-border-height) var(--border-width-small);
+  border-radius: var(--radius-base);
+  border-color: var(--grey-light-80);
+}
+
+.btn:active #fill {
+  translate: 0px 15px;
+  background-color: var(--grey-light-85);
+  transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
+}
+
+.btn:active #icon-area{
+  -unity-background-image-tint-color: var(--primary-dark-40);
+  transition: -unity-background-image-tint-color var(--button-pressed-transition) linear;
+};
+
+.btn #spirit {
+  scale: 0.95;
+  opacity: 0.5;
+  display:none;
+  border-radius: var(--radius-base);
+}
+
+.btn:focus #spirit {
+  display:flex;
+  scale: 1.03;
+  opacity: 0;
+  translate: 0px -50px;
+  transition: scale 0.35s linear, opacity 0.35s linear, translate 0.35s linear; 
+}
+
+
+
+
+.btn-rounded-large{
+  border-radius: var(--radius-large);
+}
+.btn-rounded-large #balloon{
+  border-radius: 125px;
+}
+.btn-rounded-large #fill {
+  border-radius: var(--radius-large);
+}
+.btn-rounded-large #shadow{
+  border-bottom-left-radius: var(--radius-large);
+  border-bottom-right-radius: var(--radius-large);
+}
+.btn-rounded-large #extraborder {
+  border-radius: var(--radius-large);
+}
+.btn-rounded-large #spirit {
+  border-radius: var(--radius-large);
+}
+
+
+
+
+
+
+.btn-primary #fill {
+  background-color: var(--primary);
+  border-color: var(--primary-dark-40);
+}
+
+.btn-primary #icon{
+  -unity-background-image-tint-color: var(--primary-dark-60);
+}
+.btn-primary #icon-area #mask-icon{
+  -unity-background-image-tint-color: var(--primary-dark-40);
+}
+
+.btn-primary #shadow{
+  background-color: var(--primary-dark-60);
+}
+
+.btn-primary #balloon{
+  background-color: var(--primary-light-30);
+}
+
+.btn-primary #balloon-little{
+  background-color: var(--primary);
+}
+
+.btn-primary #extraborder {
+  border-color: var(--primary-light-30);
+}
+
+.btn-primary:active #fill {
+  background-color: var(--primary-light-40);
+}
+
+.bg-primary-light-40{
+  background-color: var(--primary-light-40);
+}
+
+.bg-primary-light-60{
+  background-color: var(--primary-light-60);
+}
+
+.bg-primary-light-80{
+  background-color: var(--primary-light-80);
+}
+
+.bg-secondary{
+  background-color: var(--secondary);
+}
+.bg-red{
+  background-color: var(--red);
+}
+.bg-blue{
+  background-color: var(--blue);
+}
+.bg-green{
+  background-color: var(--green);
+}
+
+.label-default{
+  flex-direction: row;
+  border-radius: var(--radius-base);
+  border-color: var(--primary-light-30);
+  border-width: var(--border-width-small) var(--border-width-large) var(--border-width-large) var(--border-width-small);
+  background-color: var(--primary);
+  padding:3px var(--padding-small);
+}
+.label-default-outer{
+  overflow:hidden;
+  border-radius: var(--radius-base);
+  border-width: var(--border-width-small) 0px 0px var(--border-width-small);
+  border-color: var(--primary-dark-40); 
+}
+
+.label-default .label-text{
+  font-size: 48px;
+}
+
+.label-default .label-icon{
+  -unity-background-scale-mode: scale-to-fit
+  -unity-background-slice-top: 9;
+  flex-grow: 0;
+  flex-shrink:0;
+  width: var(--icon-width-small);
+}
+
+/* Sets each label in tabs to have the same size. */
+
+
+/* Adds background color for the selected tab */
+.currentlySelectedTab .btn #icon{
+  -unity-background-image-tint-color: var(--grey);
+}
+
+.currentlySelectedTab .btn #fill {
+  background-color: var(--grey-light-85);
+  translate: 0px 15px;
+  transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
+}
+
+.currentlySelectedTab .btn-primary #icon{
+  -unity-background-image-tint-color: var(--primary-dark-40);
+}
+
+.currentlySelectedTab .btn-primary #fill {
+  background-color: var(--primary-light-40);
+}
+
+/* Hides the unselected tab content */
+.unselectedContent {
+
+  display: none;
+}
+
+#SettingsTab  #icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/setting.png');
+}
+#SettingsTab  #mask-icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/setting.png');
+}
+#ShopTab  #icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/shop.png');
+}
+#ShopTab  #mask-icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/shop.png');
+}
+#HomeTab  #icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/home.png');
+}
+#HomeTab  #mask-icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/home.png');
+}
+
+
+

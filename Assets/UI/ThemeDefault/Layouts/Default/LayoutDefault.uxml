@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Button3DHorizontal" src="project://database/Assets/UI/ThemeDefault/Components/Button3DHorizontal/Button3DHorizontal.uxml?fileID=9197481963319205126&amp;guid=3acb0dd1c89a95441a6bc8c5466570d4&amp;type=3#Button3DHorizontal" />
+    <ui:Template name="Button3DSquare" src="project://database/Assets/UI/ThemeDefault/Components/Button3DSquare/Button3DSquare.uxml?fileID=9197481963319205126&amp;guid=042dfc044b52d644d9fb6a4349afded1&amp;type=3#Button3DSquare" />
+    <Style src="project://database/Assets/UI/ThemeDefault/Layouts/Default/LayoutDefault.uss?fileID=7433441132597879392&amp;guid=8651fb1daa5d7eb49b844520c1329de8&amp;type=3#LayoutDefault" />
+    <ui:VisualElement name="Header" focusable="false">
+        <ui:VisualElement class="container" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Body">
+        <ui:VisualElement name="AsideLeft">
+            <ui:Instance template="Button3DHorizontal" name="Button3DHorizontal" tooltip="DENEME1" class="btn-3d-horizontal-instance" />
+            <ui:Instance template="Button3DSquare" name="SettingsButton" class="btn-3d-square-instance" />
+            <ui:Instance template="Button3DSquare" name="Button3DSquare" class="btn-3d-square-instance" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Main" />
+        <ui:VisualElement name="AsideRight" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Footer" />
+</ui:UXML>

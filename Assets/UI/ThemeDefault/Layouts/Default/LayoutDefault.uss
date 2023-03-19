@@ -1,0 +1,31 @@
+#Header {
+  padding-top: var(--header-top-offset);
+  background-color: blue;
+}
+
+#Footer {
+  padding-bottom: var(--footer-bottom-offset);
+  background-color: blue;
+}
+
+#Body{
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+#AsideLeft {
+  flex-grow: 1;
+  background-color: red;
+  max-width: 80px;
+}
+
+#AsideRight {
+  flex-grow: 1;
+  background-color: red;
+  max-width: 80px;
+}
+
+#Main{
+  flex-shrink: 1;
+  flex-grow: 1;
+}
