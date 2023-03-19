@@ -1,5 +1,5 @@
 :root {
-  --primary: #e1e6c5;
+  --primary: #E1E6C5;
   --primary-dark-40: #878a76;
   --primary-dark-60: #5a5c4f;
   --primary-light-30: #eaeed6;

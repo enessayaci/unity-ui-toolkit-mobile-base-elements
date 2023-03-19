@@ -3,27 +3,89 @@
   font-size: var(--font-size-base)
 }
 
-#BottomBar{
-  justify-content: space-between;
-}
-
 .container{
   padding: var(--padding-base);
 }
 
+.btn-3d-square-instance{
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.btn-3d-horizontal-instance{
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.label-instance{
+  flex-shrink: 0;
+  flex-grow: 0;
+}
 
+.margin-left-auto{
+  margin-left: auto;
+}
+
+.margin-right-auto{
+  margin-right: auto;
+}
+
+.margin-top-base{
+  margin-top: auto;
+}
+
+.margin-bottom-auto{
+  margin-bottom: auto;
+}
+
+.margin-left-base{
+  margin-left: var(--margin-base);
+}
+
+.margin-right-base{
+  margin-right: var(--margin-base);
+}
+
+.margin-top-base{
+  margin-top: var(--margin-base);
+}
+
+.margin-bottom-base{
+  margin-bottom: var(--margin-base);
+}
+
+.margin-left-large{
+  margin-left: var(--margin-large);
+}
+
+.margin-right-large{
+  margin-right: var(--margin-large);
+}
+
+.margin-top-large{
+  margin-top: var(--margin-large);
+}
+
+.margin-bottom-large{
+  margin-bottom: var(--margin-large);
+}
+
+:Button.btn{
+  background-color: rgba(0,0,0,0);
+}
 
 .btn{
   overflow: visible;
-  margin: 0;
+  margin: 0px 0px var(--button-margin-bottom) 0px;
   padding: 0;
   border-width: 0;
-  border-radius: var(--radius-base);
-  background-color: var(--grey);
+  border-radius: var(--button-round-amount);
+  background-color: rgba(0,0,0,0);
+  background-image: unset;
   border-color: var(--grey-dark-20);
+  height: var(--button-square-base);
+  width: auto;
 }
 
-.btn #buttonText{
+.btn #text-area{
   position: absolute; 
   left: 0; 
   top: 0; 
@@ -31,11 +93,51 @@
   bottom: 0; 
   font-size: var(--font-size-large); 
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn-square{
-  width: var(--button-square-base);
-  height: var(--button-square-base);
+.btn #text-area #text{
+  font-size: var(--button-font-size);  
+  margin: 0px;
+  padding: 0px;
+  color: var(--grey-dark-20);
+  -unity-font: var(--button-font);
+  -unity-font-definition: var(--button-font-asset);
+}
+
+.btn #text-area #mask{
+  flex-grow: 1; 
+  position: absolute; 
+  left: -35%;
+  top: -35%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; 
+  border-radius: 100%;
+}
+
+.btn #text-area #mask-text-area{
+  width: 100%;
+  height: 100%;
+  left: 35%;
+  top: 35%;
+  background-color: rgba(0, 0, 0, 0); 
+  position: absolute; 
+  justify-content: center;
+  align-items: center;
+}
+
+.btn #text-area #mask-text{
+  -unity-background-image-tint-color: var(--grey);
+  background-color: rgba(0, 0, 0, 0);
+  position: relative; 
+  font-size: var(--button-font-size); 
+  margin: 0px;
+  padding: 0px;
+  color: var(--grey);
+  -unity-font: var(--button-font);
+  -unity-font-definition: var(--button-font-asset);
 }
 
 .btn #fill {
@@ -48,38 +150,47 @@
   overflow: hidden;
   background-color: var(--grey);
   border-width: var(--border-width-small);
-  border-radius: var(--radius-base);
+  border-radius: var(--button-round-amount);
   transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
   justify-content:center;
   align-items:center;
   
 }
 
-.btn #mask{
+.btn #icon-area #mask{
   flex-grow: 1; 
   position: absolute; 
-  left: -48px; 
-  top: -120px; 
-  width: 172px; 
-  height: 284px; 
-  rotate: 60deg; 
+  left: -35%;
+  top: -35%;
+  width: 100%;
+  height: 100%;
   overflow: hidden; 
-  border-top-left-radius: 125px; 
-  border-bottom-left-radius: 125px; 
-  border-top-right-radius: 125px; 
-  border-bottom-right-radius: 125px;
+  border-radius: 100%;
 }
 
 .btn #icon-area #mask-icon-area{
   border-width:3px 3px;
   width: var(--button-square-base);
   height: var(--button-square-base);
-  left:85px;
-  top: 27px;
+  left: 35%;
+  top: 35%;
   flex-grow: 1; 
   background-color: rgba(0, 0, 0, 0); 
   position: absolute; 
-  rotate: -60deg;
+}
+
+.btn #icon-area #mask-icon{
+  -unity-background-image-tint-color: var(--grey);
+  width: var(--button-square-icon-size);
+  height: var(--button-square-icon-size);
+  min-width: var(--button-square-icon-size);
+  min-height: var(--button-square-icon-size);
+  max-width: var(--button-square-icon-size);
+  max-height: var(--button-square-icon-size);
+  margin:auto;
+  flex-grow: 1; 
+  background-color: rgba(0, 0, 0, 0);
+  position: relative; 
 }
 
 .btn #icon-area{
@@ -104,35 +215,20 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-.btn #icon-area #mask-icon{
-  -unity-background-image-tint-color: var(--grey);
-  width: var(--button-square-icon-size);
-  height: var(--button-square-icon-size);
-  min-width: var(--button-square-icon-size);
-  min-height: var(--button-square-icon-size);
-  max-width: var(--button-square-icon-size);
-  max-height: var(--button-square-icon-size);
-  margin:auto;
-  flex-grow: 1; 
-  background-color: rgba(0, 0, 0, 0);
-  position: relative; 
-  rotate: 0;
-}
-
 .btn #shadow{
-  border-radius: var(--radius-base);
+  border-radius: var(--button-round-amount);
   background-color: var(--grey-dark-20);
   position: absolute;
   left: 0;
   right: 0;
-  bottom:  var(--button-square-shadow-position-bottom);
-  height: var(--button-square-base);
+  bottom:  var(--button-shadow-position-bottom);
+  height: 65%;
   display: flex;
 }
 
 .btn #balloon{
   background-color: var(--grey-light-80);
-  border-radius: 0px;
+  border-radius: 100%;
   flex-grow: 1;
   position: absolute;
   left: -35%;
@@ -149,10 +245,7 @@
   top: 40%; 
   width: var(--little-balloon-width); 
   height: var(--little-balloon-height); 
-  border-top-left-radius: 100px; 
-  border-bottom-left-radius: 100px; 
-  border-top-right-radius: 100px; 
-  border-bottom-right-radius: 100px; 
+  border-radius: 100%;
   rotate: -45deg;
 }
 
@@ -163,63 +256,61 @@
   height: 100%;
   background-color:rgba(0, 0, 0, 0);
   border-width: var(--border-width-base) var(--border-width-small) var(--button-square-bottom-border-height) var(--border-width-small);
-  border-radius: var(--radius-base);
+  border-radius: var(--button-round-amount);
   border-color: var(--grey-light-80);
 }
 
 .btn:active #fill {
-  translate: 0px 15px;
+  translate: 0px var(--button-press-amount);
   background-color: var(--grey-light-85);
   transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
 }
 
-.btn:active #icon-area{
-  -unity-background-image-tint-color: var(--primary-dark-40);
+.btn:active #icon{
+  -unity-background-image-tint-color: var(--grey);
   transition: -unity-background-image-tint-color var(--button-pressed-transition) linear;
 };
+
+.btn:active #text-area #text{
+  color:  var(--grey);
+  transition: color var(--button-pressed-transition) linear;
+};
+
+.btn #spirit-area{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: var(--button-press-amount);
+}
 
 .btn #spirit {
   scale: 0.95;
   opacity: 0.5;
   display:none;
-  border-radius: var(--radius-base);
+  border-radius: var(--button-round-amount);
+  border-width: var(--border-width-large);
+  border-color: #fff;
+}
+
+.btn:focus #spirit-area{
+  translate: 0px 25px;
+  transition: translate 0.35s linear; 
+  transition-delay: 0.35s;
 }
 
 .btn:focus #spirit {
   display:flex;
-  scale: 1.03;
+  scale: 1;
   opacity: 0;
-  translate: 0px -50px;
+  translate: 0px -25px;
   transition: scale 0.35s linear, opacity 0.35s linear, translate 0.35s linear; 
 }
 
-
-
-
-.btn-rounded-large{
-  border-radius: var(--radius-large);
+.btn-square{
+  width: var(--button-square-base);
+  height: var(--button-square-base);
 }
-.btn-rounded-large #balloon{
-  border-radius: 125px;
-}
-.btn-rounded-large #fill {
-  border-radius: var(--radius-large);
-}
-.btn-rounded-large #shadow{
-  border-bottom-left-radius: var(--radius-large);
-  border-bottom-right-radius: var(--radius-large);
-}
-.btn-rounded-large #extraborder {
-  border-radius: var(--radius-large);
-}
-.btn-rounded-large #spirit {
-  border-radius: var(--radius-large);
-}
-
-
-
-
-
 
 .btn-primary #fill {
   background-color: var(--primary);
@@ -231,6 +322,13 @@
 }
 .btn-primary #icon-area #mask-icon{
   -unity-background-image-tint-color: var(--primary-dark-40);
+}
+
+.btn-primary #text-area #text{
+	color: var(--primary-dark-60);
+}
+.btn-primary #text-area #mask-text{
+  color: var(--primary-dark-40);
 }
 
 .btn-primary #shadow{
@@ -252,6 +350,16 @@
 .btn-primary:active #fill {
   background-color: var(--primary-light-40);
 }
+
+.btn-primary:active #icon{
+  -unity-background-image-tint-color: var(--primary-dark-40);
+  transition: -unity-background-image-tint-color var(--button-pressed-transition) linear;
+};
+
+.btn-primary:active #text-area #text{
+  color: var(--primary-dark-40);
+  transition: color var(--button-pressed-transition) linear;
+};
 
 .bg-primary-light-40{
   background-color: var(--primary-light-40);
@@ -278,7 +386,13 @@
   background-color: var(--green);
 }
 
-.label-default{
+.label{
+  overflow:hidden;
+  border-radius: var(--radius-base);
+  border-width: var(--border-width-small) 0px 0px var(--border-width-small);
+  border-color: var(--primary-dark-40); 
+}
+.label-inner{
   flex-direction: row;
   border-radius: var(--radius-base);
   border-color: var(--primary-light-30);
@@ -286,18 +400,14 @@
   background-color: var(--primary);
   padding:3px var(--padding-small);
 }
-.label-default-outer{
-  overflow:hidden;
-  border-radius: var(--radius-base);
-  border-width: var(--border-width-small) 0px 0px var(--border-width-small);
-  border-color: var(--primary-dark-40); 
+
+.label .label-text{
+  margin: 0px;
+  padding: 0px;
+  font-size: var(--font-size-base);
 }
 
-.label-default .label-text{
-  font-size: 48px;
-}
-
-.label-default .label-icon{
+.label .label-icon{
   -unity-background-scale-mode: scale-to-fit
   -unity-background-slice-top: 9;
   flex-grow: 0;
@@ -315,7 +425,7 @@
 
 .currentlySelectedTab .btn #fill {
   background-color: var(--grey-light-85);
-  translate: 0px 15px;
+  translate: 0px var(--button-press-amount);
   transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
 }
 
@@ -333,23 +443,20 @@
   display: none;
 }
 
-#SettingsTab  #icon{
-  background-image: url('project://database/Assets/UI/Public/Icons/setting.png');
+#SettingsButton #icon{
+  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/settings.png');
 }
-#SettingsTab  #mask-icon{
-  background-image: url('project://database/Assets/UI/Public/Icons/setting.png');
+#SettingsButton #mask-icon{
+  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/settings.png');
 }
-#ShopTab  #icon{
-  background-image: url('project://database/Assets/UI/Public/Icons/shop.png');
+#CoinLabel .label-icon{
+  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/coin.png');
 }
-#ShopTab  #mask-icon{
-  background-image: url('project://database/Assets/UI/Public/Icons/shop.png');
+#DiamondLabel .label-icon{
+  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/diamond.png');
 }
-#HomeTab  #icon{
-  background-image: url('project://database/Assets/UI/Public/Icons/home.png');
-}
-#HomeTab  #mask-icon{
-  background-image: url('project://database/Assets/UI/Public/Icons/home.png');
+#UsernameLabel .label-icon{
+  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/user.png');
 }
 
 

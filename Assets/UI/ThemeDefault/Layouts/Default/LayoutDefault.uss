@@ -1,11 +1,11 @@
 #Header {
   padding-top: var(--header-top-offset);
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 #Footer {
   padding-bottom: var(--footer-bottom-offset);
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 #Body{
@@ -15,13 +15,13 @@
 
 #AsideLeft {
   flex-grow: 1;
-  background-color: red;
+  /* background-color: red; */
   max-width: 80px;
 }
 
 #AsideRight {
   flex-grow: 1;
-  background-color: red;
+  /* background-color: red; */
   max-width: 80px;
 }
 

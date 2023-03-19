@@ -19,8 +19,11 @@ public class Button3DHorizontalController
         List<TemplateContainer> instances = (List<TemplateContainer>)GetAllButton3DHorizontal().ToList();
         instances.ForEach((TemplateContainer instance) =>
         {
-            Label l = instance.Query<Label>(name: "buttonText");
-            l.text = instance.tooltip;
+            Debug.Log(instance.tooltip);
+            Label text = instance.Query<Label>(name: "text");
+            Label maskText = instance.Query<Label>(name: "mask-text");
+            text.text = instance.tooltip;
+            maskText.text = instance.tooltip;
         });
     }
 }
