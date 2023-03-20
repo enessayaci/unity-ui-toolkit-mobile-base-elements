@@ -1,21 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="Label" src="project://database/Assets/UI/ThemeDefault/Components/Label/Label.uxml?fileID=9197481963319205126&amp;guid=2341bc91a6222a14396459249b9a04ff&amp;type=3#Label" />
+    <ui:Template name="Header" src="project://database/Assets/UI/ThemeDefault/Components/Header/Header.uxml?fileID=9197481963319205126&amp;guid=d7e93facbc7cd47429ddf8a1d330713a&amp;type=3#Header" />
+    <ui:Template name="AsideLeft" src="project://database/Assets/UI/ThemeDefault/Components/AsideLeft/AsideLeft.uxml?fileID=9197481963319205126&amp;guid=2c4aa88bbb7f04f9dbe9e3c17ab491a6&amp;type=3#AsideLeft" />
     <ui:Template name="Button3DSquare" src="project://database/Assets/UI/ThemeDefault/Components/Button3DSquare/Button3DSquare.uxml?fileID=9197481963319205126&amp;guid=042dfc044b52d644d9fb6a4349afded1&amp;type=3#Button3DSquare" />
     <Style src="project://database/Assets/UI/ThemeDefault/Layouts/Default/LayoutDefault.uss?fileID=7433441132597879392&amp;guid=8651fb1daa5d7eb49b844520c1329de8&amp;type=3#LayoutDefault" />
-    <ui:VisualElement name="Header" focusable="false">
-        <ui:VisualElement class="container" style="flex-direction: row;">
-            <ui:Instance template="Label" name="UsernameLabel" class="label-instance" />
-            <ui:Instance template="Label" name="CoinLabel" class="label-instance margin-left-auto margin-right-base" />
-            <ui:Instance template="Label" name="DiamondLabel" class="label-instance" />
-        </ui:VisualElement>
-    </ui:VisualElement>
+    <ui:Instance template="Header" name="HeaderInstance" />
     <ui:VisualElement name="Body">
-        <ui:VisualElement name="AsideLeft">
-            <ui:VisualElement class="container">
-                <ui:Instance template="Button3DSquare" name="Button3DSquare" class="btn-3d-square-instance" />
-                <ui:Instance template="Button3DSquare" name="SettingsButton" class="btn-3d-square-instance margin-top-base" />
-            </ui:VisualElement>
-        </ui:VisualElement>
+        <ui:Instance template="AsideLeft" name="AsideLeftInstance" />
         <ui:VisualElement name="Main">
             <ui:VisualElement name="Top" style="flex-grow: 1;" />
             <ui:VisualElement name="Middle" style="flex-grow: 1; justify-content: flex-end; align-items: flex-start;">

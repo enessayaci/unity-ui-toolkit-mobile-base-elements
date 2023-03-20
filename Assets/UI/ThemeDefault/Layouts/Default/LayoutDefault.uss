@@ -1,4 +1,4 @@
-#Header {
+#HeaderInstance {
   padding-top: var(--header-top-offset);
   /* background-color: blue; */
 }
@@ -13,7 +13,7 @@
   flex-direction: row;
 }
 
-#AsideLeft {
+#AsideLeftInstance {
   flex-grow: 1;
   /* background-color: red; */
   max-width: 80px;

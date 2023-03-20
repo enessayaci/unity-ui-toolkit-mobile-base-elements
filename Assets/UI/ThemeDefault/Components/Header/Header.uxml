@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="Label" src="project://database/Assets/UI/ThemeDefault/Components/Label/Label.uxml?fileID=9197481963319205126&amp;guid=2341bc91a6222a14396459249b9a04ff&amp;type=3#Label" />
+    <ui:VisualElement class="container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+        <ui:Instance template="Label" name="UsernameLabelInstance" class="label-instance" />
+        <ui:Instance template="Label" name="CoinLabelInstance" class="label-instance margin-left-auto margin-right-base" />
+        <ui:Instance template="Label" name="DiamondLabelInstance" class="label-instance" />
+    </ui:VisualElement>
+</ui:UXML>

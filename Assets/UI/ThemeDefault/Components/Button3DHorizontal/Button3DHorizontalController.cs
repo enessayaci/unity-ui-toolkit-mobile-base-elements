@@ -2,19 +2,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Button3DHorizontalController 
+public class Button3DHorizontalController
 {
-    private readonly VisualElement root;
-    public Button3DHorizontalController(VisualElement root)
+
+    public void Initialize()
     {
-        this.root = root;
-    }
-    private UQueryBuilder<TemplateContainer> GetAllButton3DHorizontal()
-    {
-        return root.Query<TemplateContainer>(className: "btn-3d-horizontal-instance");
+        ChangeTexts();
     }
 
-    public void ChangeTexts()
+    private UQueryBuilder<TemplateContainer> GetAllButton3DHorizontal()
+    {
+        return UIManager.root.Query<TemplateContainer>(className: "btn-3d-horizontal-instance");
+    }
+
+    private void ChangeTexts()
     {
         List<TemplateContainer> instances = (List<TemplateContainer>)GetAllButton3DHorizontal().ToList();
         instances.ForEach((TemplateContainer instance) =>

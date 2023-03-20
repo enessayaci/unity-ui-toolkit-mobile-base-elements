@@ -7,14 +7,6 @@
   padding: var(--padding-base);
 }
 
-.btn-3d-square-instance{
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-.btn-3d-horizontal-instance{
-  flex-shrink: 0;
-  flex-grow: 0;
-}
 .label-instance{
   flex-shrink: 0;
   flex-grow: 0;
@@ -68,8 +60,21 @@
   margin-bottom: var(--margin-large);
 }
 
-:Button.btn{
+.unity-button.btn{
   background-color: rgba(0,0,0,0);
+}
+
+.btn-3d-square-instance{
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.btn-3d-horizontal-instance{
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.btn-3d-horizontal-instance > .btn{
+  min-width: 120px;
 }
 
 .btn{
@@ -79,14 +84,13 @@
   border-width: 0;
   border-radius: var(--button-round-amount);
   background-color: rgba(0,0,0,0);
-  background-image: unset;
   border-color: var(--grey-dark-20);
   height: var(--button-square-base);
   width: auto;
 }
 
 .btn #text-area{
-  position: absolute; 
+  position: relative; 
   left: 0; 
   top: 0; 
   right: 0; 
@@ -142,7 +146,6 @@
 
 .btn #fill {
   flex-grow: 1;
-  position: absolute;
   left: 0px;
   top: 0px;
   height: 100%;
@@ -151,10 +154,17 @@
   background-color: var(--grey);
   border-width: var(--border-width-small);
   border-radius: var(--button-round-amount);
-  transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
+  /*transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;*/
   justify-content:center;
   align-items:center;
-  
+}
+
+.btn-3d-square-instance > #Button > #fill{
+	position: absolute;
+}
+
+.btn-3d-horizontal-instance > #Button > #fill{
+	position: relative;
 }
 
 .btn #icon-area #mask{
@@ -210,7 +220,7 @@
   max-height: var(--button-square-icon-size);
   margin:auto;
    -unity-background-image-tint-color: var(--grey-dark-20);
-  transition: -unity-background-image-tint-color var(--button-pressed-transition) linear;
+  /*transition: -unity-background-image-tint-color var(--button-pressed-transition) linear;*/
   flex-grow: 1; 
   background-color: rgba(0, 0, 0, 0);
 }
@@ -249,7 +259,7 @@
   rotate: -45deg;
 }
 
-.btn #extraborder {
+.btn > #extraborder {
   flex-grow: 1;
   position: absolute;
   width: 100%; 
@@ -260,23 +270,23 @@
   border-color: var(--grey-light-80);
 }
 
-.btn:active #fill {
+.btn:focus > #fill {
   translate: 0px var(--button-press-amount);
   background-color: var(--grey-light-85);
-  transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
+  transition: translate var(--button-pressed-transition) linear;
 }
 
-.btn:active #icon{
+.btn:focus > #icon{
   -unity-background-image-tint-color: var(--grey);
   transition: -unity-background-image-tint-color var(--button-pressed-transition) linear;
 };
 
-.btn:active #text-area #text{
+.btn:focus > #text-area > #text{
   color:  var(--grey);
   transition: color var(--button-pressed-transition) linear;
 };
 
-.btn #spirit-area{
+.btn > #spirit-area{
   position:absolute;
   width: 100%;
   height: 100%;
@@ -284,22 +294,22 @@
   top: var(--button-press-amount);
 }
 
-.btn #spirit {
+.btn > #spirit-area > #spirit {
   scale: 0.95;
   opacity: 0.5;
-  display:none;
+  display: none;
   border-radius: var(--button-round-amount);
   border-width: var(--border-width-large);
   border-color: #fff;
 }
 
-.btn:focus #spirit-area{
+.btn:focus > #spirit-area{
   translate: 0px 25px;
   transition: translate 0.35s linear; 
   transition-delay: 0.35s;
 }
 
-.btn:focus #spirit {
+.btn:focus > #spirit-area > #spirit {
   display:flex;
   scale: 1;
   opacity: 0;
@@ -312,7 +322,7 @@
   height: var(--button-square-base);
 }
 
-.btn-primary #fill {
+.btn-primary > #fill {
   background-color: var(--primary);
   border-color: var(--primary-dark-40);
 }
@@ -347,18 +357,16 @@
   border-color: var(--primary-light-30);
 }
 
-.btn-primary:active #fill {
+.btn-primary:focus #fill {
   background-color: var(--primary-light-40);
 }
 
-.btn-primary:active #icon{
+.btn-primary:focus #icon{
   -unity-background-image-tint-color: var(--primary-dark-40);
-  transition: -unity-background-image-tint-color var(--button-pressed-transition) linear;
 };
 
-.btn-primary:active #text-area #text{
+.btn-primary:focus #text-area #text{
   color: var(--primary-dark-40);
-  transition: color var(--button-pressed-transition) linear;
 };
 
 .bg-primary-light-40{
@@ -408,8 +416,7 @@
 }
 
 .label .label-icon{
-  -unity-background-scale-mode: scale-to-fit
-  -unity-background-slice-top: 9;
+  -unity-background-scale-mode: scale-to-fit;
   flex-grow: 0;
   flex-shrink:0;
   width: var(--icon-width-small);
@@ -426,7 +433,6 @@
 .currentlySelectedTab .btn #fill {
   background-color: var(--grey-light-85);
   translate: 0px var(--button-press-amount);
-  transition: translate var(--button-pressed-transition) linear, background-color var(--button-pressed-transition) linear;
 }
 
 .currentlySelectedTab .btn-primary #icon{
@@ -443,19 +449,19 @@
   display: none;
 }
 
-#SettingsButton #icon{
+#SettingsButtonInstance #icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/settings.png');
 }
-#SettingsButton #mask-icon{
+#SettingsButtonInstance #mask-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/settings.png');
 }
-#CoinLabel .label-icon{
+#CoinLabelInstance .label-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/coin.png');
 }
-#DiamondLabel .label-icon{
+#DiamondLabelInstance .label-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/diamond.png');
 }
-#UsernameLabel .label-icon{
+#UsernameLabelInstance .label-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/user.png');
 }
 
