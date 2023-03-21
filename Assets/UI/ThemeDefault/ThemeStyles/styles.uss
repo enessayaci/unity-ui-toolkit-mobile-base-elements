@@ -12,6 +12,35 @@
   flex-grow: 0;
 }
 
+.text-center{
+	-unity-text-align: middle-center;
+}
+.text-left{
+	-unity-text-align: middle-left;
+}
+.text-right{
+	-unity-text-align: middle-right;
+}
+
+.align-items-center{
+	align-items: center;
+}
+.justify-content-center{
+	justify-content: center;
+}
+
+.padding-0{
+	padding:0px;
+}
+
+.margin-0{
+	margin: 0px;
+}
+
+.margin-auto{
+	margin:auto;
+}
+
 .margin-left-auto{
   margin-left: auto;
 }
@@ -58,6 +87,42 @@
 
 .margin-bottom-large{
   margin-bottom: var(--margin-large);
+}
+
+.padding-top-base{
+  padding-top: var(--padding-base);
+}
+
+.padding-bottom-base{
+  padding-bottom: var(--padding-base);
+}
+
+.padding-top-large{
+  padding-top: var(--padding-large);
+}
+
+.padding-bottom-large{
+  padding-bottom: var(--padding-large);
+}
+
+
+.row{
+	flex-direction:row;
+}
+
+.radius-base{
+	border-radius:var(--radius-base);
+}
+
+.radius-large{
+	border-radius:var(--radius-large);
+}
+
+.unity-button{
+	border-width: 0px;
+	margin: 0px;
+	padding: 0px;
+	background-color: rgba(0,0,0,0);
 }
 
 .unity-button.btn{
@@ -368,6 +433,10 @@
 .btn-primary:focus #text-area #text{
   color: var(--primary-dark-40);
 };
+
+.bg-primary{
+  background-color: var(--primary);
+}
 
 .bg-primary-light-40{
   background-color: var(--primary-light-40);

@@ -23,6 +23,7 @@
   --icon-width-small: 35px;
   --icon-width-large: 75px;
 
+  --modal-close-icon-size: 25px;
 
   --button-font-asset: url('project://database/Assets/UI/ThemeDefault/Public/Fonts/Rammetto_One/RammettoOne-RegularSDF.asset');
   --button-font: url('project://database/Assets/UI/ThemeDefault/Public/Fonts/Rammetto_One/RammettoOne-Regular.ttf');

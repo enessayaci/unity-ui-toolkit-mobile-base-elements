@@ -1,0 +1,22 @@
+#ModalContent{
+    width: 100%;
+    height: 300px;
+    max-width: 300px;
+    max-height: 500px;
+    border-radius: var(--radius-xlarge);
+}
+
+#ModalTitle{
+    font-size: var(--font-size-large)
+}
+
+#CloseModalButton{
+    position: absolute;
+    width: var(--modal-close-icon-size);
+    height: var(--modal-close-icon-size);
+    right: 5px;
+    -unity-background-image-tint-color: var(--text-color-base);
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/close.png');
+
+}
