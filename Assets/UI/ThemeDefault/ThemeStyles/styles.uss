@@ -118,6 +118,23 @@
 	border-radius:var(--radius-large);
 }
 
+.toggle > Label{
+	min-width: unset;
+	flex-grow: 1;
+	flex-shrink: 1;
+	margin: 0px;
+	padding: 0px;
+	-unity-text-align: middle-left;
+}
+.toggle > .unity-toggle__input{
+	flex: 1 1 1 1;
+}
+
+.toggle > .unity-toggle__input .unity-toggle__checkmark{
+	width: var(--checkbox-size);
+	height: var(--checkbox-size);
+}
+
 .unity-button{
 	border-width: 0px;
 	margin: 0px;

@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="ModalHeader" class="container">
+        <ui:VisualElement name="VisualElement" class="container radius-large bg-primary justify-content-center" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="ModalTitle" class="margin-0 padding-0 text-center" />
+            <ui:Button display-tooltip-when-elided="true" name="CloseModalButton" class="btn-close-modal" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
