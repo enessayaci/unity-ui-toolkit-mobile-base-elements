@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UIElements;
 
-public class HeaderController
+public class MainInfoController
 {
     private Label CoinText;
 

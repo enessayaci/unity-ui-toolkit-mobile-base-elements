@@ -1,5 +1,6 @@
 #Header {
     padding-top: var(--header-top-offset);
+    flex-grow: 0;
 }
 
 #Backdrop {

@@ -7,11 +7,6 @@
   padding: var(--padding-base);
 }
 
-.label-instance{
-  flex-shrink: 0;
-  flex-grow: 0;
-}
-
 .text-center{
 	-unity-text-align: middle-center;
 }
@@ -144,6 +139,11 @@
 
 .unity-button.btn{
   background-color: rgba(0,0,0,0);
+}
+
+.label-instance{
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .btn-3d-square-instance{
@@ -540,15 +540,6 @@
 }
 #SettingsButton #mask-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/settings.png');
-}
-#CoinLabel .label-icon{
-  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/coin.png');
-}
-#DiamondLabel .label-icon{
-  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/diamond.png');
-}
-#UsernameLabel .label-icon{
-  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/user.png');
 }
 
 
