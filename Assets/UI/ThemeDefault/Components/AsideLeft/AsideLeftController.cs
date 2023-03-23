@@ -12,12 +12,21 @@ public class AsideLeftController
 
     private void AttachClickEvents()
     {
-        UIManager.root.Query<TemplateContainer>("SettingsButtonInstance").Children<Button>().First().clicked += OnClickSettingsButton;
-    }
+        //Find SettingsButton and attach its on click events
+        Button settingsButton = UIManager.root.Query<TemplateContainer>("SettingsButtonInstance").Children<Button>().First();
+        settingsButton.clicked += () =>
+        {
+            //Modal content to show will be detected from clicked button's tooltip value. eg: to show ModalContentSettings, you must set tooltip value of clicked button as "ModalContentSettings".
+            ModalController.ShowModal(settingsButton.tooltip);
+        };
 
-    private void OnClickSettingsButton()
-    {
-        Debug.Log("Clicked Settings Button!");
+        //Find LevelsButton and attach its on click events
+        Button levelsButton = UIManager.root.Q<Button>("LevelsButton");
+        levelsButton.clicked += () =>
+        {
+            //Modal content to show will be detected from clicked button's tooltip value. eg: to show ModalContentSettings, you must set tooltip value of clicked button as "ModalContentSettings".
+            ModalController.ShowModal(levelsButton.tooltip);
+        };
     }
 
 }

@@ -2,11 +2,13 @@
     <ui:Template name="ModalHeader" src="project://database/Assets/UI/ThemeDefault/Components/ModalHeader/ModalHeader.uxml?fileID=9197481963319205126&amp;guid=aec14ff7fbf6746f7a7018384fc8ae06&amp;type=3#ModalHeader" />
     <ui:Instance template="ModalHeader" name="ModalHeader" class="modal-header-instance">
         <AttributeOverrides element-name="ModalTitle" text="Settings" />
+        <AttributeOverrides element-name="CloseModalButton" focusable="false" />
     </ui:Instance>
     <ui:VisualElement name="ModalBody" class="container">
         <ui:VisualElement name="ModalBodySettings" tooltip="Settings" class="container active" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
             <ui:Toggle label="Music" name="MusicToggle" class="toggle margin-bottom-base margin-0" />
             <ui:Toggle label="Sound" name="SoundToggle" class="toggle margin-0" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" tooltip="ModalContentLevels" name="LevelsButton" style="background-color: rgb(0, 0, 0);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

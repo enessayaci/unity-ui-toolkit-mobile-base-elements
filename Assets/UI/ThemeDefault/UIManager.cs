@@ -5,22 +5,24 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
     public static VisualElement root;
+    public static List<TemplateContainer> modalContents;
+    public static TemplateContainer modal;
+    public static VisualElement backdrop;
+    public static bool isModalActive = false;
 
     private HeaderController _HeaderController;
     private Button3DHorizontalController _Button3DHorizontalController;
     private AsideLeftController _AsideLeftController;
-
-    private void Awake()
-    {
-        instance = this;
-    }
+    private ModalController _ModalController;
 
     private void OnEnable()
     {
         UIDocument menu = GetComponent<UIDocument>();
         root = menu.rootVisualElement;
+        backdrop = root.Q<VisualElement>("Backdrop");
+        modal = root.Q<TemplateContainer>("Modal");
+        modalContents = modal.Query<VisualElement>("ModalDialog").Children<TemplateContainer>().ToList();
 
         //Components' custom scripts below
 
@@ -32,6 +34,9 @@ public class UIManager : MonoBehaviour
 
         _AsideLeftController = new();
         _AsideLeftController.Initialize();
+
+        _ModalController = new();
+        _ModalController.Initialize();
 
     }
 

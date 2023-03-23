@@ -34,6 +34,17 @@
     border-radius: var(--radius-xlarge);
 }
 
+.modal-content-instance{
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: var(--modal-show-duration);
+}
+
+.modal-content-instance.show{
+    opacity: 1;
+}
+
 #ModalTitle{
     font-size: var(--font-size-large)
 }
@@ -48,6 +59,17 @@
     background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/close.png');
 }
 
+#CloseModalButton:hover{
+    background-color: rgba(0,0,0,0);
+}
+
 .display-none{
     display:none;
+}
+
+#BackgroundButton{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
 }
