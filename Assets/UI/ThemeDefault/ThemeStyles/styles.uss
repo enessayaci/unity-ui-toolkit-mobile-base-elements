@@ -535,19 +535,19 @@
   display: none;
 }
 
-#SettingsButtonInstance #icon{
+#SettingsButton #icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/settings.png');
 }
-#SettingsButtonInstance #mask-icon{
+#SettingsButton #mask-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/settings.png');
 }
-#CoinLabelInstance .label-icon{
+#CoinLabel .label-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/coin.png');
 }
-#DiamondLabelInstance .label-icon{
+#DiamondLabel .label-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/diamond.png');
 }
-#UsernameLabelInstance .label-icon{
+#UsernameLabel .label-icon{
   background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/user.png');
 }
 

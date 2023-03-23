@@ -7,13 +7,13 @@ public class AsideLeftController
 
     public void Initialize()
     {
-        AttachClickEvents();
+        AttachEventListeners();
     }
 
-    private void AttachClickEvents()
+    private void AttachEventListeners()
     {
         //Find SettingsButton and attach its on click events
-        Button settingsButton = UIManager.root.Query<TemplateContainer>("SettingsButtonInstance").Children<Button>().First();
+        Button settingsButton = UIManager.root.Query<TemplateContainer>("SettingsButton").Children<Button>().First();
         settingsButton.clicked += () =>
         {
             //Modal content to show will be detected from clicked button's tooltip value. eg: to show ModalContentSettings, you must set tooltip value of clicked button as "ModalContentSettings".

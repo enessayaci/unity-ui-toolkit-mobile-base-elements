@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:VisualElement name="ModalBodySettings" class="container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
-        <ui:Toggle label="Music" name="MusicToggle" class="toggle margin-bottom-base margin-0" />
-        <ui:Toggle label="Sound" name="SoundToggle" class="toggle margin-0" />
-    </ui:VisualElement>
-</ui:UXML>

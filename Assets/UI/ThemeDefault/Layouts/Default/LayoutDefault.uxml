@@ -13,12 +13,9 @@
         <ui:VisualElement name="Main">
             <ui:VisualElement name="Top" style="flex-grow: 1;" />
             <ui:VisualElement name="Middle" style="flex-grow: 1; justify-content: flex-end; align-items: flex-start;">
-                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
-                    <ui:Instance template="Button3DHorizontal" name="Button3DHorizontal">
+                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; justify-content: center; align-items: center;">
+                    <ui:Instance template="Button3DHorizontal" name="Button3DHorizontal" class="btn-3d-horizontal-instance">
                         <AttributeOverrides element-name="text" text="davar" />
-                    </ui:Instance>
-                    <ui:Instance template="Button3DHorizontal" name="Button3DHorizontal" tooltip="Deneme" class="btn-3d-horizontal-instance">
-                        <AttributeOverrides element-name="text" text="denem" />
                     </ui:Instance>
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-direction: row; align-items: center; width: 100%; justify-content: center;">

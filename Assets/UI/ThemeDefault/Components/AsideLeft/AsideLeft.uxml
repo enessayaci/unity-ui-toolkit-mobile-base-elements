@@ -1,7 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Template name="Button3DSquare" src="project://database/Assets/UI/ThemeDefault/Components/Button3DSquare/Button3DSquare.uxml?fileID=9197481963319205126&amp;guid=042dfc044b52d644d9fb6a4349afded1&amp;type=3#Button3DSquare" />
     <ui:VisualElement class="container">
-        <ui:Instance template="Button3DSquare" name="Button3DSquare" class="btn-3d-square-instance" />
-        <ui:Instance template="Button3DSquare" name="SettingsButtonInstance" class="btn-3d-square-instance margin-top-base" />
+        <ui:Instance template="Button3DSquare" name="SettingsButton" class="btn-3d-square-instance margin-top-base" />
     </ui:VisualElement>
 </ui:UXML>

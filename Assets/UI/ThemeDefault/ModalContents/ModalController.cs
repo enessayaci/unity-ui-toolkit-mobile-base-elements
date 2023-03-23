@@ -6,7 +6,7 @@ public class ModalController
 {
     public void Initialize()
     {
-        AttachClickEvents();
+        AttachEventListeners();
     }
 
     public static void ShowModal(string modalContentToShow)
@@ -35,7 +35,7 @@ public class ModalController
         UIManager.modal.RemoveFromClassList("show");
     }
 
-    private void AttachClickEvents()
+    private void AttachEventListeners()
     {
         //Find all CloseModalButton buttons and attach their on click events
         foreach (TemplateContainer modalHeader in UIManager.modal.Query<TemplateContainer>("ModalHeader").ToList())

@@ -12,9 +12,9 @@ public class UIManager : MonoBehaviour
     public static bool isModalActive = false;
 
     private HeaderController _HeaderController;
-    private Button3DHorizontalController _Button3DHorizontalController;
     private AsideLeftController _AsideLeftController;
     private ModalController _ModalController;
+    private ModalContentSettingsController _ModalContentSettingsController;
 
     private void OnEnable()
     {
@@ -29,14 +29,14 @@ public class UIManager : MonoBehaviour
         _HeaderController = new();
         _HeaderController.Initialize();
 
-        _Button3DHorizontalController = new();
-        _Button3DHorizontalController.Initialize();
-
         _AsideLeftController = new();
         _AsideLeftController.Initialize();
 
         _ModalController = new();
         _ModalController.Initialize();
+
+        _ModalContentSettingsController = new();
+        _ModalContentSettingsController.Initialize();
 
     }
 
