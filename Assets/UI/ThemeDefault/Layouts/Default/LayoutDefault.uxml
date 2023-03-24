@@ -1,12 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="MainInfo" src="project://database/Assets/UI/ThemeDefault/Components/MainInfo/MainInfo.uxml?fileID=9197481963319205126&amp;guid=6d8febcac54224303bb4a899f68cf7df&amp;type=3#MainInfo" />
+    <ui:Template name="PlayerHUD" src="project://database/Assets/UI/ThemeDefault/Components/PlayerHUD/PlayerHUD.uxml" />
     <ui:Template name="AsideLeft" src="project://database/Assets/UI/ThemeDefault/Components/AsideLeft/AsideLeft.uxml?fileID=9197481963319205126&amp;guid=2c4aa88bbb7f04f9dbe9e3c17ab491a6&amp;type=3#AsideLeft" />
     <ui:Template name="Button3DHorizontal" src="project://database/Assets/UI/ThemeDefault/Components/Button3DHorizontal/Button3DHorizontal.uxml?fileID=9197481963319205126&amp;guid=3acb0dd1c89a95441a6bc8c5466570d4&amp;type=3#Button3DHorizontal" />
     <ui:Template name="Button3DSquare" src="project://database/Assets/UI/ThemeDefault/Components/Button3DSquare/Button3DSquare.uxml?fileID=9197481963319205126&amp;guid=042dfc044b52d644d9fb6a4349afded1&amp;type=3#Button3DSquare" />
     <ui:Template name="Modal" src="project://database/Assets/UI/ThemeDefault/ModalContents/Modal.uxml?fileID=9197481963319205126&amp;guid=b85a7590af2464c538ff2d0812fd6bfa&amp;type=3#Modal" />
     <Style src="project://database/Assets/UI/ThemeDefault/Layouts/Default/LayoutDefault.uss?fileID=7433441132597879392&amp;guid=8651fb1daa5d7eb49b844520c1329de8&amp;type=3#LayoutDefault" />
     <ui:VisualElement name="Header" class="container" style="background-color: rgba(0, 0, 0, 0);">
-        <ui:Instance template="MainInfo" name="MainInfo" />
+        <ui:Instance template="PlayerHUD" name="PlayerHUD" />
     </ui:VisualElement>
     <ui:VisualElement name="Body">
         <ui:Instance template="AsideLeft" name="AsideLeftInstance">

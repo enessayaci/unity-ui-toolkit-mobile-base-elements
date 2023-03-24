@@ -1,6 +1,7 @@
+using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MainInfoController
+public class PlayerHUDController
 {
     private Label CoinText;
 

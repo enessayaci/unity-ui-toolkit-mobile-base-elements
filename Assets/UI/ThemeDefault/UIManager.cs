@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public static VisualElement backdrop;
     public static bool isModalActive = false;
 
-    private MainInfoController _MainInfoController;
+    private PlayerHUDController _PlayerHUDController;
     private AsideLeftController _AsideLeftController;
     private ModalController _ModalController;
     private ModalContentSettingsController _ModalContentSettingsController;
@@ -26,8 +26,8 @@ public class UIManager : MonoBehaviour
 
         //Components' custom scripts below
 
-        _MainInfoController = new();
-        _MainInfoController.Initialize();
+        _PlayerHUDController = new();
+        _PlayerHUDController.Initialize();
 
         _AsideLeftController = new();
         _AsideLeftController.Initialize();
