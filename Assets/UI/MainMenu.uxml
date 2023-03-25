@@ -1,0 +1,44 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Label" src="project://database/Assets/UI/Components/Label/Label.uxml?fileID=9197481963319205126&amp;guid=2341bc91a6222a14396459249b9a04ff&amp;type=3#Label" />
+    <ui:Template name="Button3DSquare" src="project://database/Assets/UI/Components/Button3DSquare/Button3DSquare.uxml?fileID=9197481963319205126&amp;guid=042dfc044b52d644d9fb6a4349afded1&amp;type=3#Button3DSquare" />
+    <ui:Template name="Button3DHorizontal" src="project://database/Assets/UI/Components/Button3DHorizontal/Button3DHorizontal.uxml?fileID=9197481963319205126&amp;guid=3acb0dd1c89a95441a6bc8c5466570d4&amp;type=3#Button3DHorizontal" />
+    <ui:Template name="Modal" src="project://database/Assets/UI/ModalContents/Modal.uxml?fileID=9197481963319205126&amp;guid=b85a7590af2464c538ff2d0812fd6bfa&amp;type=3#Modal" />
+    <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=8651fb1daa5d7eb49b844520c1329de8&amp;type=3#MainMenu" />
+    <ui:VisualElement name="MainMenuView" class="padding-top-offset" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="Header" class="container" style="background-color: rgba(0, 0, 0, 0);">
+            <ui:Instance template="Label" name="UsernameLabel" class="label-instance" />
+            <ui:Instance template="Label" name="CoinLabel" class="label-instance margin-left-auto margin-right-base" />
+            <ui:Instance template="Label" name="DiamondLabel" class="label-instance" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Body">
+            <ui:VisualElement name="AsideLeft" class="container">
+                <ui:Instance template="Button3DSquare" name="SettingsButton" class="btn-3d-square-instance margin-top-base">
+                    <AttributeOverrides element-name="Button" tooltip="ModalContentSettings" focusable="true" />
+                </ui:Instance>
+            </ui:VisualElement>
+            <ui:VisualElement name="Main">
+                <ui:VisualElement name="Top" style="flex-grow: 1;" />
+                <ui:VisualElement name="Middle" style="flex-grow: 1; justify-content: flex-end; align-items: flex-start;">
+                    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100%; justify-content: center; align-items: center;">
+                        <ui:Instance template="Button3DHorizontal" name="Button3DHorizontal" class="btn-3d-horizontal-instance">
+                            <AttributeOverrides element-name="text" text="davar" />
+                            <AttributeOverrides element-name="mask-text" text="davar" />
+                        </ui:Instance>
+                    </ui:VisualElement>
+                    <ui:VisualElement style="flex-direction: row; align-items: center; width: 100%; justify-content: center;">
+                        <ui:Instance template="Button3DSquare" name="Button3DSquare" class="btn-3d-square-instance" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Bottom" style="flex-grow: 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="AsideRight" class="container" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Footer" />
+        <ui:VisualElement name="Backdrop">
+            <ui:VisualElement name="BackdropBG" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:Instance template="Modal" name="Modal" class="modal-instance">
+            <AttributeOverrides element-name="ModalTitle" text="Settings" />
+        </ui:Instance>
+    </ui:VisualElement>
+</ui:UXML>

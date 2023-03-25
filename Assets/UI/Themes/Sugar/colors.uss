@@ -1,0 +1,48 @@
+:root {
+  --primary: #f94693;
+  --primary-dark-40: #952a58;
+  --primary-dark-60: #641c3b;
+  --primary-light-30: #fb7eb3;
+  --primary-light-40: #fb90be;
+  --primary-light-60: #fdb5d4;
+  --primary-light-80: #fedae9;
+
+  --secondary: #ff803d;
+  --secondary-dark-40: #994d25;
+  --secondary-dark-60: #663318;
+  --secondary-light-30: #ffa677;
+  --secondary-light-40: #ffb38b;
+  --secondary-light-60: #ffccb1;
+  --secondary-light-80: #ffe6d8;
+
+  --red : #b33d3d;
+  --red-dark-40 : #6b2525;
+  --red-dark-60: #481818;
+  --red-light-30: #ca7777;
+  --red-light-40: #d18b8b;
+
+  --green : #3db36c;
+  --green-dark-40 : #256b41;
+  --green-dark-60: #18482b;
+  --green-light-30: #77ca98;
+  --green-light-40: #8bd1a7;
+
+  --yellow : #b3993d;
+  --yellow-dark-40 : #6b5c25;
+  --yellow-dark-60: #483d18;
+  --yellow-light-30: #cab877;
+  --yellow-light-40: #d1c28b;
+
+  --blue : #3d8ab3;
+  --blue-dark-40 : #25536b;
+  --blue-dark-60: #1f455a;
+  --blue-light-30: #77adca;
+  --blue-light-40: #8bb9d1;
+
+
+  --grey : #BAC1CC;
+  --grey-dark-20 : #76859B;
+  --grey-light-80: #D4D6D8;
+  --grey-light-85: #EBEDF0;
+  --grey-light-90: #F6F6F7;
+}

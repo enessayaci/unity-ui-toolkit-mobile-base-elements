@@ -1,0 +1,70 @@
+.padding-top-offset{
+    padding-top: var(--header-top-offset);
+}
+
+#Backdrop {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition-delay: var(--modal-show-duration);
+    transition-property: display;
+    transition-timing-function: ease;
+    transition-duration: 0.01s;
+    display: none;
+}
+
+#Backdrop > #BackdropBG{
+    background-color: rgba(0, 0, 0, 0.5);
+    transition-delay: 0.01s;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: var(--backdrop-fade-duration);
+    opacity: 0;
+}
+
+#Backdrop.show{
+    transition-delay: 0.01s;
+    display: flex;
+}
+
+#Backdrop.show > #BackdropBG{
+    opacity: 1;
+}
+
+#Footer {
+    padding-bottom: var(--footer-bottom-offset);
+}
+
+#Body {
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+#Header{
+    flex-direction: row;
+}
+
+#AsideLeft {
+    flex-grow: 1;
+    max-width: 80px;
+}
+
+#AsideRight {
+    flex-grow: 1;
+    max-width: 80px;
+}
+
+#Main {
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+#Header > #CoinLabel .label-icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/coin.png');
+}
+#Header > #DiamondLabel .label-icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/diamond.png');
+}
+#Header > #UsernameLabel .label-icon{
+  background-image: url('project://database/Assets/UI/Public/Icons/user.png');
+}

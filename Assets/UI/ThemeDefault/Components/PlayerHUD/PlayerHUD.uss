@@ -1,9 +1,0 @@
-#CoinLabel .label-icon{
-  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/coin.png');
-}
-#DiamondLabel .label-icon{
-  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/diamond.png');
-}
-#UsernameLabel .label-icon{
-  background-image: url('project://database/Assets/UI/ThemeDefault/Public/Icons/user.png');
-}

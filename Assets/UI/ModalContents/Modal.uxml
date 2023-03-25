@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="ModalContentSettings" src="project://database/Assets/UI/ModalContents/Settings/ModalContentSettings.uxml?fileID=9197481963319205126&amp;guid=ba8acbba1fa084863a079f556188a2df&amp;type=3#ModalContentSettings" />
+    <ui:Template name="ModalContentLevels" src="project://database/Assets/UI/ModalContents/Levels/ModalContentLevels.uxml?fileID=9197481963319205126&amp;guid=a0a0df675b07843c898117219bfae562&amp;type=3#ModalContentLevels" />
+    <Style src="project://database/Assets/UI/ModalContents/Modal.uss?fileID=7433441132597879392&amp;guid=4e70aa3a54c4e47758550c24ee526dec&amp;type=3#Modal" />
+    <ui:Button display-tooltip-when-elided="true" name="BackgroundButton" />
+    <ui:VisualElement name="ModalDialog" class="margin-auto bg-secondary">
+        <ui:Instance template="ModalContentSettings" name="ModalContentSettings" class="modal-content-instance display-none" />
+        <ui:Instance template="ModalContentLevels" name="ModalContentLevels" class="display-none modal-content-instance">
+            <AttributeOverrides element-name="ModalTitle" text="Levels" />
+        </ui:Instance>
+    </ui:VisualElement>
+</ui:UXML>

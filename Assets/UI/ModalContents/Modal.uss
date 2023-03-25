@@ -1,0 +1,75 @@
+#Modal{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    transition-delay: var(--modal-show-duration);
+    transition-property: display;
+    transition-timing-function: ease;
+    transition-duration: 0.01s;
+    display: none;
+}
+
+#Modal > #ModalDialog{
+    scale: 0;
+    transition-delay: 0.01s;
+    transition-property: scale;
+    transition-timing-function: ease;
+    transition-duration: var(--modal-show-duration);
+}
+
+#Modal.show{
+    transition-delay: 0.01s;
+    display: flex;
+}
+
+#Modal.show > #ModalDialog{
+    scale: 1;
+}
+
+#ModalDialog{
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 750px;
+    border-radius: var(--radius-xlarge);
+}
+
+.modal-content-instance{
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: var(--modal-show-duration);
+}
+
+.modal-content-instance.show{
+    opacity: 1;
+}
+
+#ModalTitle{
+    font-size: var(--font-size-large)
+}
+
+#CloseModalButton{
+    position: absolute;
+    width: var(--modal-close-icon-size);
+    height: var(--modal-close-icon-size);
+    right: 5px;
+    -unity-background-image-tint-color: var(--text-color-base);
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url('project://database/Assets/UI/Public/Icons/close.png');
+}
+
+#CloseModalButton:hover{
+    background-color: rgba(0,0,0,0);
+}
+
+.display-none{
+    display:none;
+}
+
+#BackgroundButton{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+}
