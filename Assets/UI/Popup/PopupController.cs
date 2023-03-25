@@ -8,28 +8,28 @@ public class PopupController
     private static VisualElement backdrop;
     public void Initialize()
     {
-        backdrop = UIManager.root.Q<VisualElement>("Backdrop");
         popup = UIManager.root.Q<TemplateContainer>("Popup");
+        backdrop = popup.Q<VisualElement>("Backdrop");
         popupContents = popup.Query<VisualElement>("PopupDialog").Children<TemplateContainer>().ToList();
         AttachEventListeners();
     }
 
-    public static void ShowPopup(string modalContentToShow)
+    public static void ShowPopup(string popupContentToShow)
     {
         backdrop.AddToClassList("show");
         popup.AddToClassList("show");
 
-        foreach (TemplateContainer modalContent in popupContents)
+        foreach (TemplateContainer popupContent in popupContents)
         {
-            if (modalContent.name == modalContentToShow)
+            if (popupContent.name == popupContentToShow)
             {
-                modalContent.RemoveFromClassList("display-none");
-                modalContent.AddToClassList("show");
+                popupContent.RemoveFromClassList("display-none");
+                popupContent.AddToClassList("show");
             }
             else
             {
-                modalContent.AddToClassList("display-none");
-                modalContent.RemoveFromClassList("show");
+                popupContent.AddToClassList("display-none");
+                popupContent.RemoveFromClassList("show");
             }
         }
     }
