@@ -14,10 +14,10 @@ public class PopupContentSettingsController
 
     private static void AttachEventListeners()
     {
-        VisualElement modalBodySettings = UIManager.popup.Q<VisualElement>("PopupBodySettings");
+        VisualElement popupBodySettings = PopupController.popup.Q<VisualElement>("PopupBodySettings");
 
         //Find MusicToggle element in ModalBodySettings element and set its value changed event
-        Toggle musicToggle = modalBodySettings.Q<Toggle>("MusicToggle");
+        Toggle musicToggle = popupBodySettings.Q<Toggle>("MusicToggle");
         musicToggle.RegisterValueChangedCallback((evt) =>
         {
             if (evt.newValue == true)
@@ -33,7 +33,7 @@ public class PopupContentSettingsController
 
 
         //Find SoundToggle element in ModalBodySettings element and set its value changed event
-        Toggle soundToggle = modalBodySettings.Q<Toggle>("SoundToggle");
+        Toggle soundToggle = popupBodySettings.Q<Toggle>("SoundToggle");
         soundToggle.RegisterValueChangedCallback((evt) =>
         {
             if (evt.newValue == true)

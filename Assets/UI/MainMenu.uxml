@@ -3,6 +3,7 @@
     <ui:Template name="Button3DSquare" src="project://database/Assets/UI/Components/Button3DSquare/Button3DSquare.uxml?fileID=9197481963319205126&amp;guid=042dfc044b52d644d9fb6a4349afded1&amp;type=3#Button3DSquare" />
     <ui:Template name="Button3DHorizontal" src="project://database/Assets/UI/Components/Button3DHorizontal/Button3DHorizontal.uxml?fileID=9197481963319205126&amp;guid=3acb0dd1c89a95441a6bc8c5466570d4&amp;type=3#Button3DHorizontal" />
     <ui:Template name="Modal" src="project://database/Assets/UI/Popup/Popup.uxml?fileID=9197481963319205126&amp;guid=b85a7590af2464c538ff2d0812fd6bfa&amp;type=3#Popup" />
+    <ui:Template name="Loading" src="project://database/Assets/UI/Components/Loading/Loading.uxml?fileID=9197481963319205126&amp;guid=2eb655114c8dc77438712877b863bae4&amp;type=3#Loading" />
     <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=8651fb1daa5d7eb49b844520c1329de8&amp;type=3#MainMenu" />
     <ui:VisualElement name="MainMenuView" class="padding-top-offset" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
         <ui:VisualElement name="Header" class="container" style="background-color: rgba(0, 0, 0, 0);">
@@ -34,11 +35,12 @@
             <ui:VisualElement name="AsideRight" class="container" />
         </ui:VisualElement>
         <ui:VisualElement name="Footer" />
-        <ui:VisualElement name="Backdrop">
-            <ui:VisualElement name="BackdropBG" style="flex-grow: 1;" />
-        </ui:VisualElement>
-        <ui:Instance template="Modal" name="Popup" class="popup-instance">
-            <AttributeOverrides element-name="ModalTitle" text="Settings" />
-        </ui:Instance>
     </ui:VisualElement>
+    <ui:VisualElement name="Backdrop">
+        <ui:VisualElement name="BackdropBG" style="flex-grow: 1;" />
+    </ui:VisualElement>
+    <ui:Instance template="Modal" name="Popup" class="popup-instance">
+        <AttributeOverrides element-name="ModalTitle" text="Settings" />
+    </ui:Instance>
+    <ui:Instance template="Loading" name="Loading" />
 </ui:UXML>

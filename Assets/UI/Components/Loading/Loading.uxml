@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Components/Loading/Loading.uss?fileID=7433441132597879392&amp;guid=db8cc97d6be22924690b5bc43e4e235f&amp;type=3#Loading" />
+    <ui:VisualElement name="dots" style="background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="dot1" class="dot" />
+        <ui:VisualElement name="dot2" class="dot" />
+        <ui:VisualElement name="dot3" class="dot" />
+        <ui:VisualElement name="dot4" class="dot" />
+    </ui:VisualElement>
+</ui:UXML>

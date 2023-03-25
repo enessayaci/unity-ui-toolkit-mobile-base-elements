@@ -1,27 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
     public static VisualElement root;
-    public static List<TemplateContainer> popupContents; //It is for all popup contents, for example: PopupContentSettings. There is only one popup frame taking place in MainMenu.uxml, every popup content takes place inside popup body and display:flex when needed.
-    public static TemplateContainer popup;
-    public static VisualElement backdrop;
-    public static bool isModalActive = false;
 
     private MainMenuController _MainMenuController;
     private PopupController _PopupController;
     private PopupContentSettingsController _PopupContentSettingsController;
+    private LoadingController _LoadingController;
+
+
 
     private void OnEnable()
     {
         UIDocument menu = GetComponent<UIDocument>();
         root = menu.rootVisualElement;
-        backdrop = root.Q<VisualElement>("Backdrop");
-        popup = root.Q<TemplateContainer>("Popup");
-        popupContents = popup.Query<VisualElement>("PopupDialog").Children<TemplateContainer>().ToList();
 
         //Components' custom scripts below
 
@@ -34,8 +31,22 @@ public class UIManager : MonoBehaviour
         _PopupContentSettingsController = new();
         _PopupContentSettingsController.Initialize();
 
+        _LoadingController = new();
+        _LoadingController.Initialize();
+
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            LoadingController.ShowLoading();
+        }
 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            LoadingController.HideLoading();
+        }
+    }
 
 }

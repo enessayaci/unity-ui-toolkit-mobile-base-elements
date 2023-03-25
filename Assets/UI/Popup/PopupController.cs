@@ -1,18 +1,25 @@
+using System.Collections.Generic;
 using UnityEngine.UIElements;
 
 public class PopupController
 {
+    private static List<TemplateContainer> popupContents; //It is for all popup contents, for example: PopupContentSettings. There is only one popup frame taking place in MainMenu.uxml, every popup content takes place inside popup body and display:flex when needed.
+    public static TemplateContainer popup;
+    private static VisualElement backdrop;
     public void Initialize()
     {
+        backdrop = UIManager.root.Q<VisualElement>("Backdrop");
+        popup = UIManager.root.Q<TemplateContainer>("Popup");
+        popupContents = popup.Query<VisualElement>("PopupDialog").Children<TemplateContainer>().ToList();
         AttachEventListeners();
     }
 
     public static void ShowPopup(string modalContentToShow)
     {
-        UIManager.backdrop.AddToClassList("show");
-        UIManager.popup.AddToClassList("show");
+        backdrop.AddToClassList("show");
+        popup.AddToClassList("show");
 
-        foreach (TemplateContainer modalContent in UIManager.popupContents)
+        foreach (TemplateContainer modalContent in popupContents)
         {
             if (modalContent.name == modalContentToShow)
             {
@@ -29,14 +36,14 @@ public class PopupController
 
     public static void HidePopup()
     {
-        UIManager.backdrop.RemoveFromClassList("show");
-        UIManager.popup.RemoveFromClassList("show");
+        backdrop.RemoveFromClassList("show");
+        popup.RemoveFromClassList("show");
     }
 
     private void AttachEventListeners()
     {
         //Find all ClosePopupButton buttons and attach their on click events
-        foreach (TemplateContainer popupHeader in UIManager.popup.Query<TemplateContainer>("PopupHeader").ToList())
+        foreach (TemplateContainer popupHeader in popup.Query<TemplateContainer>("PopupHeader").ToList())
         {
             Button closeModalButton = popupHeader.Q<Button>("ClosePopupButton");
 
@@ -46,7 +53,7 @@ public class PopupController
             };
         }
 
-        Button backgroundButton = UIManager.popup.Q<Button>("BackgroundButton");
+        Button backgroundButton = popup.Q<Button>("BackgroundButton");
         backgroundButton.clicked += () =>
         {
             HidePopup();

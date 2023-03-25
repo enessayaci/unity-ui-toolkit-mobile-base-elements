@@ -6,9 +6,9 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 0px;
-    left: 0px;
-    transition-delay: var(--modal-show-duration);
+    top: 0;
+    left: 0;
+    transition-delay: var(--popup-show-duration);
     transition-property: display;
     transition-timing-function: ease;
     transition-duration: 0.01s;
