@@ -24,8 +24,8 @@
 
   --checkbox-size: 32px;
 
-  --modal-close-icon-size: 25px;
-  --modal-show-duration: 0.35s;
+  --popup-close-icon-size: 25px;
+  --popup-show-duration: 0.35s;
 
   --button-font-asset: url('project://database/Assets/UI/Public/Fonts/Rammetto_One/RammettoOne-RegularSDF.asset');
   --button-font: url('project://database/Assets/UI/Public/Fonts/Rammetto_One/RammettoOne-Regular.ttf');

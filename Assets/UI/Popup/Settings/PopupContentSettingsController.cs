@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Toggle = UnityEngine.UIElements.Toggle;
 
-public class ModalContentSettingsController
+public class PopupContentSettingsController
 {
     public void Initialize()
     {
@@ -14,7 +14,7 @@ public class ModalContentSettingsController
 
     private static void AttachEventListeners()
     {
-        VisualElement modalBodySettings = UIManager.modal.Q<VisualElement>("ModalBodySettings");
+        VisualElement modalBodySettings = UIManager.popup.Q<VisualElement>("PopupBodySettings");
 
         //Find MusicToggle element in ModalBodySettings element and set its value changed event
         Toggle musicToggle = modalBodySettings.Q<Toggle>("MusicToggle");

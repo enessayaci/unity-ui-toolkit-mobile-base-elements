@@ -1,20 +1,18 @@
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ModalController
+public class PopupController
 {
     public void Initialize()
     {
         AttachEventListeners();
     }
 
-    public static void ShowModal(string modalContentToShow)
+    public static void ShowPopup(string modalContentToShow)
     {
         UIManager.backdrop.AddToClassList("show");
-        UIManager.modal.AddToClassList("show");
+        UIManager.popup.AddToClassList("show");
 
-        foreach (TemplateContainer modalContent in UIManager.modalContents)
+        foreach (TemplateContainer modalContent in UIManager.popupContents)
         {
             if (modalContent.name == modalContentToShow)
             {
@@ -29,29 +27,29 @@ public class ModalController
         }
     }
 
-    public static void HideModal()
+    public static void HidePopup()
     {
         UIManager.backdrop.RemoveFromClassList("show");
-        UIManager.modal.RemoveFromClassList("show");
+        UIManager.popup.RemoveFromClassList("show");
     }
 
     private void AttachEventListeners()
     {
-        //Find all CloseModalButton buttons and attach their on click events
-        foreach (TemplateContainer modalHeader in UIManager.modal.Query<TemplateContainer>("ModalHeader").ToList())
+        //Find all ClosePopupButton buttons and attach their on click events
+        foreach (TemplateContainer popupHeader in UIManager.popup.Query<TemplateContainer>("PopupHeader").ToList())
         {
-            Button closeModalButton = modalHeader.Q<Button>("CloseModalButton");
+            Button closeModalButton = popupHeader.Q<Button>("ClosePopupButton");
 
             closeModalButton.clicked += () =>
             {
-                HideModal();
+                HidePopup();
             };
         }
 
-        Button backgroundButton = UIManager.modal.Q<Button>("BackgroundButton");
+        Button backgroundButton = UIManager.popup.Q<Button>("BackgroundButton");
         backgroundButton.clicked += () =>
         {
-            HideModal();
+            HidePopup();
         };
 
     }

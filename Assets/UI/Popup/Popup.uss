@@ -1,32 +1,32 @@
-#Modal{
+#Popup{
     position:absolute;
     height: 100%;
     width: 100%;
-    transition-delay: var(--modal-show-duration);
+    transition-delay: var(--popup-show-duration);
     transition-property: display;
     transition-timing-function: ease;
     transition-duration: 0.01s;
     display: none;
 }
 
-#Modal > #ModalDialog{
+#Popup > #PopupDialog{
     scale: 0;
     transition-delay: 0.01s;
     transition-property: scale;
     transition-timing-function: ease;
-    transition-duration: var(--modal-show-duration);
+    transition-duration: var(--popup-show-duration);
 }
 
-#Modal.show{
+#Popup.show{
     transition-delay: 0.01s;
     display: flex;
 }
 
-#Modal.show > #ModalDialog{
+#Popup.show > #PopupDialog{
     scale: 1;
 }
 
-#ModalDialog{
+#PopupDialog{
     width: 100%;
     height: auto;
     max-width: 300px;
@@ -34,32 +34,32 @@
     border-radius: var(--radius-xlarge);
 }
 
-.modal-content-instance{
+.popup-content-instance{
     opacity: 0;
     transition-property: opacity;
     transition-timing-function: ease;
-    transition-duration: var(--modal-show-duration);
+    transition-duration: var(--popup-show-duration);
 }
 
-.modal-content-instance.show{
+.popup-content-instance.show{
     opacity: 1;
 }
 
-#ModalTitle{
+#PopupTitle{
     font-size: var(--font-size-large)
 }
 
-#CloseModalButton{
+#ClosePopupButton{
     position: absolute;
-    width: var(--modal-close-icon-size);
-    height: var(--modal-close-icon-size);
+    width: var(--popup-close-icon-size);
+    height: var(--popup-close-icon-size);
     right: 5px;
     -unity-background-image-tint-color: var(--text-color-base);
     -unity-background-scale-mode: scale-to-fit;
     background-image: url('project://database/Assets/UI/Public/Icons/close.png');
 }
 
-#CloseModalButton:hover{
+#ClosePopupButton:hover{
     background-color: rgba(0,0,0,0);
 }
 

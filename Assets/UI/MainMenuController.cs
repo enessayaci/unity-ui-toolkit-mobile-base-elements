@@ -11,13 +11,9 @@ public class MainMenuController
     {
         //Find base parent nodes to avoid iterate all hierarchy when need a inner element like buttons, labels etc... 
         VisualElement mainMenuView = UIManager.root.Q<VisualElement>("MainMenuView");
-        Debug.Log("mainMenuView: " + mainMenuView.name);
         VisualElement header = mainMenuView.Q<VisualElement>("Header");
-        Debug.Log("header: " + header.name);
         VisualElement body = mainMenuView.Q<VisualElement>("Body");
-        Debug.Log("body: " + body.name);
         VisualElement asideLeft = body.Q<VisualElement>("AsideLeft");
-        Debug.Log("asideLeft: " + asideLeft.name);
         VisualElement bodyMain = body.Q<VisualElement>("Main");
         VisualElement asideRight = body.Q<VisualElement>("AsideRight");
 
@@ -33,8 +29,8 @@ public class MainMenuController
         Button settingsButton = parentToSearch.Q<TemplateContainer>("SettingsButton").Q<Button>();
         settingsButton.clicked += () =>
         {
-            //Modal content to show will be detected from clicked button's tooltip value. eg: to show ModalContentSettings, you must set tooltip value of clicked button as "ModalContentSettings".
-            ModalController.ShowModal(settingsButton.tooltip);
+            //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
+            PopupController.ShowPopup(settingsButton.tooltip);
         };
     }
 
