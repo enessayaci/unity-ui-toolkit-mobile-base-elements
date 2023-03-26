@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     private MainMenuController _MainMenuController;
     private PopupController _PopupController;
-    private PopupContentSettingsController _PopupContentSettingsController;
+    private PopupSettingsController _PopupSettingsController;
     private LoadingController _LoadingController;
 
 
@@ -28,8 +28,8 @@ public class UIManager : MonoBehaviour
         _PopupController = new();
         _PopupController.Initialize();
 
-        _PopupContentSettingsController = new();
-        _PopupContentSettingsController.Initialize();
+        _PopupSettingsController = new();
+        _PopupSettingsController.Initialize();
 
         _LoadingController = new();
         _LoadingController.Initialize();

@@ -44,7 +44,7 @@
   margin-right: auto;
 }
 
-.margin-top-base{
+.margin-top-auto{
   margin-top: auto;
 }
 
@@ -535,11 +535,101 @@
   display: none;
 }
 
-#SettingsButton #icon{
-  background-image: url('project://database/Assets/UI/Public/Icons/settings.png');
+.display-none{
+    display:none;
 }
-#SettingsButton #mask-icon{
-  background-image: url('project://database/Assets/UI/Public/Icons/settings.png');
+
+/*POPUP*/
+.popup-instance{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition-delay: var(--popup-show-duration);
+    transition-property: display;
+    transition-timing-function: ease;
+    transition-duration: 0.01s;
+    display: none;
+}
+
+.popup-instance > #PopupDialog{
+    scale: 0;
+    transition-delay: 0.01s;
+    transition-property: scale;
+    transition-timing-function: ease;
+    transition-duration: var(--popup-show-duration);
+}
+
+.popup-instance.show{
+    transition-delay: 0.01s;
+    display: flex;
+}
+
+.popup-instance.show > #PopupDialog{
+    scale: 1;
+}
+
+.popup-instance > #PopupDialog{
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 750px;
+    border-radius: var(--radius-xlarge);
+}
+
+.popup-instance > #PopupDialog > #PopupHeader #PopupTitle{
+    font-size: var(--font-size-large)
+}
+
+.popup-instance > #Backdrop {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition-delay: var(--popup-show-duration);
+    transition-property: display;
+    transition-timing-function: ease;
+    transition-duration: 0.01s;
+    display: none;
+}
+
+.popup-instance > #Backdrop > #BackdropBG {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition-delay: 0.01s;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: var(--backdrop-fade-duration);
+    opacity: 0;
+}
+
+.popup-instance > #Backdrop.show {
+    transition-delay: 0.01s;
+    display: flex;
+}
+
+.popup-instance > #Backdrop.show > #BackdropBG {
+    opacity: 1;
+}
+
+.popup-instance > > #PopupDialog > #PopupHeader #ClosePopupButton{
+    position: absolute;
+    width: var(--popup-close-icon-size);
+    height: var(--popup-close-icon-size);
+    right: 5px;
+    -unity-background-image-tint-color: var(--text-color-base);
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url('project://database/Assets/UI/Public/Icons/close.png');
+}
+
+#ClosePopupButton:hover{
+    background-color: rgba(0,0,0,0);
+}
+
+#BackgroundButton{
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
 }
 
 

@@ -32,6 +32,14 @@ public class MainMenuController
             //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
             PopupController.ShowPopup(settingsButton.tooltip);
         };
+
+        //Find WinButton and attach its on click events
+        Button winButton = parentToSearch.Q<TemplateContainer>("WinButton").Q<Button>();
+        winButton.clicked += () =>
+        {
+            //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
+            PopupController.ShowPopup(winButton.tooltip);
+        };
     }
 
     private void AssingCoinLabel(VisualElement parentToSearch)

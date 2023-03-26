@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Toggle = UnityEngine.UIElements.Toggle;
-
-public class PopupContentSettingsController
+using Button = UnityEngine.UIElements.Button;
+public class PopupSettingsController
 {
     public void Initialize()
     {
@@ -14,10 +11,10 @@ public class PopupContentSettingsController
 
     private static void AttachEventListeners()
     {
-        VisualElement popupBodySettings = PopupController.popup.Q<VisualElement>("PopupBodySettings");
+        TemplateContainer popupSettings = PopupController.FindPopup("PopupSettings");
 
         //Find MusicToggle element in ModalBodySettings element and set its value changed event
-        Toggle musicToggle = popupBodySettings.Q<Toggle>("MusicToggle");
+        Toggle musicToggle = popupSettings.Q<Toggle>("MusicToggle");
         musicToggle.RegisterValueChangedCallback((evt) =>
         {
             if (evt.newValue == true)
@@ -33,7 +30,7 @@ public class PopupContentSettingsController
 
 
         //Find SoundToggle element in ModalBodySettings element and set its value changed event
-        Toggle soundToggle = popupBodySettings.Q<Toggle>("SoundToggle");
+        Toggle soundToggle = popupSettings.Q<Toggle>("SoundToggle");
         soundToggle.RegisterValueChangedCallback((evt) =>
         {
             if (evt.newValue == true)
@@ -46,5 +43,14 @@ public class PopupContentSettingsController
             }
             Debug.Log(evt.newValue);
         });
+
+        //Find WinButton and attach its on click events
+        Button winButton = popupSettings.Q<Button>("WinButtonSettings");
+        winButton.clicked += () =>
+        {
+            //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
+            PopupController.HidePopup("PopupSettings");
+            PopupController.ShowPopup("PopupWin");
+        };
     }
 }

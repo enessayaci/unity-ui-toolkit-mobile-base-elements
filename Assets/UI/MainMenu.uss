@@ -41,3 +41,11 @@
 #Header > #UsernameLabel .label-icon {
     background-image: url('project://database/Assets/UI/Public/Icons/user.png?fileID=2800000&guid=6b1f7932826acfc40bf8ab3a228db15f&type=3#user');
 }
+
+#AsideLeft > #SettingsButton #icon {
+    background-image: url('project://database/Assets/UI/Public/Icons/settings.png');
+}
+
+#AsideLeft > #SettingsButton #mask-icon {
+    background-image: url('project://database/Assets/UI/Public/Icons/settings.png');
+}
