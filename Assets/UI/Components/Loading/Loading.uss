@@ -1,43 +1,49 @@
-#Loading{
+#Loading {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    transition-delay: var(--popup-show-duration);
-    transition-property: display;
+    transition-property: opacity;
     transition-timing-function: ease;
-    transition-duration: 0.01s;
+    transition-duration: 0.15s;
     display: none;
-    background-color: rgba(0,0,0,0.75);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
-#Loading.show{
+#Loading.show {
+    opacity: 1;
     display: flex;
 }
 
-#Loading > #dots{
+#Loading > #dots {
     flex-direction: row;
     margin: auto;
-    width: 110px;
-    display:flex;
+    width: 90px;
+    display: flex;
     justify-content: space-between;
     flex-grow: 0;
     flex-shrink: 0;
 }
 
-#Loading > #dots > .dot{
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    background-color: rgba(255,255,255,0.55);
+#Loading > #dots > .dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.55;
     flex-shrink: 0;
     flex-grow: 0;
-    transition-property: translate;
+    transition-property: translate, scale, opacity;
     transition-timing-function: ease;
-    transition-duration: 0.35s;
+    transition-duration: 0.30s;
 }
 
-#Loading > #dots > .dot.animate{
-    translate: 0px -10px;
+#Loading > #dots > .dot.animate {
+    translate: 0 -3px;
+    scale: 1.25;
+    opacity: 1;
 }
+
+

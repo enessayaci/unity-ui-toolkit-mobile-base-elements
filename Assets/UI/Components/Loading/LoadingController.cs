@@ -10,11 +10,9 @@ public class LoadingController
         private static VisualElement dot1;
         private static VisualElement dot2;
         private static VisualElement dot3;
-        private static VisualElement dot4;
         private static bool isDot1Up = false;
         private static bool isDot2Up = false;
         private static bool isDot3Up = false;
-        private static bool isDot4Up = false;
         private static bool isLoadingVisible = false;
         private static int loadingShowCount;
     #endregion
@@ -29,27 +27,38 @@ public class LoadingController
         dot1 = Loading.Q<VisualElement>("dot1");
         dot2 = Loading.Q<VisualElement>("dot2");
         dot3 = Loading.Q<VisualElement>("dot3");
-        dot4 = Loading.Q<VisualElement>("dot4");
     }
 
     public static void ShowLoading()
     {
+        //If already opened
         if (isLoadingVisible)
         {
             loadingShowCount += 1;
             return;
         }
 
+        //If newly openning 
+        dot1.style.transitionDelay = new List<TimeValue> { 0f };
+        dot2.style.transitionDelay = new List<TimeValue> { 0.15f };
+        dot3.style.transitionDelay = new List<TimeValue> { 0.30f };
+
         isLoadingVisible = true;
         Loading.AddToClassList("show");
         loadingShowCount += 1;
         SubscribeTransitionEvents();
+
         isDot1Up = true;
         dot1.AddToClassList("animate");
+        isDot2Up = true;
+        dot2.AddToClassList("animate");
+        isDot3Up = true;
+        dot3.AddToClassList("animate");
     }
 
     public static void HideLoading()
     {
+        //If loading didnt opened. Means that you are trying to hide Loading without Openning it
         if (!isLoadingVisible)
         {
             return;
@@ -68,7 +77,6 @@ public class LoadingController
         dot1.RemoveFromClassList("animate");
         dot2.RemoveFromClassList("animate");
         dot3.RemoveFromClassList("animate");
-        dot4.RemoveFromClassList("animate");
 
     }
 
@@ -78,7 +86,6 @@ public class LoadingController
         dot1.RegisterCallback<TransitionEndEvent>(OnTransitionEnd);
         dot2.RegisterCallback<TransitionEndEvent>(OnTransitionEnd);
         dot3.RegisterCallback<TransitionEndEvent>(OnTransitionEnd);
-        dot4.RegisterCallback<TransitionEndEvent>(OnTransitionEnd);
     }
 
     private static void LeaveTransitionEvents()
@@ -87,12 +94,14 @@ public class LoadingController
         dot1.UnregisterCallback<TransitionEndEvent>(OnTransitionEnd);
         dot2.UnregisterCallback<TransitionEndEvent>(OnTransitionEnd);
         dot3.UnregisterCallback<TransitionEndEvent>(OnTransitionEnd);
-        dot4.UnregisterCallback<TransitionEndEvent>(OnTransitionEnd);
     }
 
     private static void OnTransitionEnd(TransitionEndEvent transitionEndEvent)
     {
+        if (!transitionEndEvent.AffectsProperty("scale")) return;
+
         VisualElement dotUp = (VisualElement)transitionEndEvent.target;
+        dotUp.style.transitionDelay = new List<TimeValue> { 0f };
 
         switch (dotUp.name)
         {
@@ -100,9 +109,13 @@ public class LoadingController
                 if (isDot1Up)
                 {
                     isDot1Up = false;
-                    isDot2Up = true;
                     dot1.RemoveFromClassList("animate");
-                    dot2.AddToClassList("animate");
+                }
+                else
+                {
+                    isDot1Up = true;
+                    dot1.style.transitionDelay = new List<TimeValue> { 0.30f };
+                    dot1.AddToClassList("animate");
                 }
 
                 break;
@@ -111,9 +124,14 @@ public class LoadingController
                 if (isDot2Up)
                 {
                     isDot2Up = false;
-                    isDot3Up = true;
+
                     dot2.RemoveFromClassList("animate");
-                    dot3.AddToClassList("animate");
+                }
+                else
+                {
+                    isDot2Up = true;
+                    dot2.style.transitionDelay = new List<TimeValue> { 0.30f };
+                    dot2.AddToClassList("animate");
                 }
 
                 break;
@@ -122,25 +140,16 @@ public class LoadingController
                 if (isDot3Up)
                 {
                     isDot3Up = false;
-                    isDot4Up = true;
                     dot3.RemoveFromClassList("animate");
-                    dot4.AddToClassList("animate");
                 }
-
-                break;
-
-            case "dot4":
-                if (isDot4Up)
+                else
                 {
-                    isDot4Up = false;
-                    isDot1Up = true;
-                    dot4.RemoveFromClassList("animate");
-                    dot1.AddToClassList("animate");
+                    isDot3Up = true;
+                    dot3.style.transitionDelay = new List<TimeValue> { 0.30f };
+                    dot3.AddToClassList("animate");
                 }
 
                 break;
         }
-
-
     }
 }

@@ -4,6 +4,5 @@
         <ui:VisualElement name="dot1" class="dot" />
         <ui:VisualElement name="dot2" class="dot" />
         <ui:VisualElement name="dot3" class="dot" />
-        <ui:VisualElement name="dot4" class="dot" />
     </ui:VisualElement>
 </ui:UXML>
