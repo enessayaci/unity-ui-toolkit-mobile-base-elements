@@ -4,15 +4,17 @@
     width: 100%;
     top: 0;
     left: 0;
-    transition-property: opacity;
+    transition-property: opacity, display;
     transition-timing-function: ease;
     transition-duration: 0.15s;
+    transition-delay: 0s, 0.15s;
     display: none;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.75);
 }
 
 #Loading.show {
+    transition-delay: 0s, 0s;
     opacity: 1;
     display: flex;
 }
@@ -35,14 +37,13 @@
     opacity: 0.55;
     flex-shrink: 0;
     flex-grow: 0;
-    transition-property: translate, scale, opacity;
+    transition-property: translate, opacity;
     transition-timing-function: ease;
     transition-duration: 0.30s;
 }
 
 #Loading > #dots > .dot.animate {
-    translate: 0 -3px;
-    scale: 1.25;
+    translate: 0 -16px;
     opacity: 1;
 }
 

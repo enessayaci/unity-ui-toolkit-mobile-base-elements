@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class LoadingController
+public class LoadingController : MonoBehaviour
 {
     #region Loading elements
-        private static TemplateContainer Loading;
-        private static VisualElement dot1;
-        private static VisualElement dot2;
-        private static VisualElement dot3;
-        private static bool isDot1Up = false;
-        private static bool isDot2Up = false;
-        private static bool isDot3Up = false;
-        private static bool isLoadingVisible = false;
-        private static int loadingShowCount;
+    private static TemplateContainer Loading;
+    private static VisualElement dot1;
+    private static VisualElement dot2;
+    private static VisualElement dot3;
+    private static bool isDot1Up = false;
+    private static bool isDot2Up = false;
+    private static bool isDot3Up = false;
+    private static bool isLoadingVisible = false;
+    private static int loadingShowCount;
+
+    private static LoadingController instance;
     #endregion
     public void Initialize()
     {
+        instance = new GameObject("LoadingHelper").AddComponent<LoadingController>();
         AssignDots();
     }
 
@@ -38,14 +42,24 @@ public class LoadingController
             return;
         }
 
-        //If newly openning 
-        dot1.style.transitionDelay = new List<TimeValue> { 0f };
-        dot2.style.transitionDelay = new List<TimeValue> { 0.15f };
-        dot3.style.transitionDelay = new List<TimeValue> { 0.30f };
 
+        instance.StartCoroutine(ShowLoadingCoroutine().GetEnumerator());
+
+    }
+
+    private static IEnumerable ShowLoadingCoroutine()
+    {
         isLoadingVisible = true;
         Loading.AddToClassList("show");
         loadingShowCount += 1;
+
+        yield return new WaitForSeconds(0.25f);
+
+        //If newly openning 
+        dot1.style.transitionDelay = new List<TimeValue> { 0f };
+        dot2.style.transitionDelay = new List<TimeValue> { 0.1f };
+        dot3.style.transitionDelay = new List<TimeValue> { 0.2f };
+
         SubscribeTransitionEvents();
 
         isDot1Up = true;
@@ -74,6 +88,10 @@ public class LoadingController
 
         LeaveTransitionEvents();
 
+        dot1.style.transitionDelay = new List<TimeValue> { 0f };
+        dot2.style.transitionDelay = new List<TimeValue> { 0f };
+        dot3.style.transitionDelay = new List<TimeValue> { 0f };
+
         dot1.RemoveFromClassList("animate");
         dot2.RemoveFromClassList("animate");
         dot3.RemoveFromClassList("animate");
@@ -98,7 +116,7 @@ public class LoadingController
 
     private static void OnTransitionEnd(TransitionEndEvent transitionEndEvent)
     {
-        if (!transitionEndEvent.AffectsProperty("scale")) return;
+        if (!transitionEndEvent.AffectsProperty("translate")) return;
 
         VisualElement dotUp = (VisualElement)transitionEndEvent.target;
         dotUp.style.transitionDelay = new List<TimeValue> { 0f };
@@ -114,7 +132,7 @@ public class LoadingController
                 else
                 {
                     isDot1Up = true;
-                    dot1.style.transitionDelay = new List<TimeValue> { 0.30f };
+                    dot1.style.transitionDelay = new List<TimeValue> { 0.2f };
                     dot1.AddToClassList("animate");
                 }
 
@@ -130,7 +148,7 @@ public class LoadingController
                 else
                 {
                     isDot2Up = true;
-                    dot2.style.transitionDelay = new List<TimeValue> { 0.30f };
+                    dot2.style.transitionDelay = new List<TimeValue> { 0.2f };
                     dot2.AddToClassList("animate");
                 }
 
@@ -145,7 +163,7 @@ public class LoadingController
                 else
                 {
                     isDot3Up = true;
-                    dot3.style.transitionDelay = new List<TimeValue> { 0.30f };
+                    dot3.style.transitionDelay = new List<TimeValue> { 0.2f };
                     dot3.AddToClassList("animate");
                 }
 
