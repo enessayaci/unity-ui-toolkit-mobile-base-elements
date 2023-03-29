@@ -9,6 +9,7 @@ public class PopupController
     public void Initialize()
     {
         popups = UIManager.root.Query<TemplateContainer>().Where((x) => x.ClassListContains("popup-instance")).ToList();
+        AttachAllPopupButtons();
         AttachEventListeners();
     }
 
@@ -68,6 +69,18 @@ public class PopupController
             };
         }
 
+    }
+
+    private void AttachAllPopupButtons()
+    {
+        UIManager.root.Query<Button>().Where(button => button.tooltip.Contains("Popup")).ForEach(button =>
+        {
+            button.clicked += () =>
+            {
+                //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupSettings, you must set tooltip value of clicked button as "PopupSettings".
+                ShowPopup(button.tooltip);
+            };
+        });
     }
 
 }

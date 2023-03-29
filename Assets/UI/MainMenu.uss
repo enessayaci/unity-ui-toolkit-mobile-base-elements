@@ -49,3 +49,11 @@
 #AsideLeft > #SettingsButton #mask-icon {
     background-image: url('project://database/Assets/UI/Public/Icons/settings.png');
 }
+
+#AsideLeft > #ShopButton #icon {
+    background-image: url('project://database/Assets/UI/Public/Icons/shop.png');
+}
+
+#AsideLeft > #ShopButton #mask-icon {
+    background-image: url('project://database/Assets/UI/Public/Icons/shop.png');
+}

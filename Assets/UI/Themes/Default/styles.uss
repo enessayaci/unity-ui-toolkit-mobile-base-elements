@@ -3,6 +3,14 @@
   font-size: var(--font-size-base)
 }
 
+.display-none{
+    display:none;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
 .container{
   padding: var(--padding-base);
 }
@@ -22,6 +30,14 @@
 }
 .justify-content-center{
 	justify-content: center;
+}
+
+.border-right-1{
+    border-right-width: 1px;
+}
+
+.flex-grow{
+    flex-grow: 1;
 }
 
 .padding-0{
@@ -111,6 +127,36 @@
 
 .radius-large{
 	border-radius:var(--radius-large);
+}
+
+.radius-right-small{
+    border-top-right-radius:var(--radius-small);
+    border-bottom-right-radius:var(--radius-small);
+}
+
+.radius-left-small{
+    border-top-left-radius:var(--radius-small);
+    border-bottom-left-radius:var(--radius-small);
+}
+
+.radius-right-base{
+    border-top-right-radius:var(--radius-base);
+    border-bottom-right-radius:var(--radius-base);
+}
+
+.radius-left-base{
+    border-top-left-radius:var(--radius-base);
+    border-bottom-left-radius:var(--radius-base);
+}
+
+.radius-right-large{
+    border-top-right-radius:var(--radius-large);
+    border-bottom-right-radius:var(--radius-large);
+}
+
+.radius-left-large{
+    border-top-left-radius:var(--radius-large);
+    border-bottom-left-radius:var(--radius-large);
 }
 
 .toggle > Label{
@@ -508,36 +554,40 @@
   width: var(--icon-width-small);
 }
 
-/* Sets each label in tabs to have the same size. */
+/* TAB */
+.tab{
+    margin: 0px;
+    padding: var(--padding-small);
+    border-color: var(--primary-dark-60);
+    color: var(--text-color-base);
+    opacity: 0.8;
+    /*transition-property: background-color;
+    transition-duration: 0.35s;
+    transition-timing-function: ease;*/
+}
 
+.tab.show{
+    opacity:1;
+    background-color: var(--primary);
+}
 
-/* Adds background color for the selected tab */
-.currentlySelectedTab .btn #icon{
+.tab .btn #icon{
   -unity-background-image-tint-color: var(--grey);
 }
 
-.currentlySelectedTab .btn #fill {
+.tab .btn #fill {
   background-color: var(--grey-light-85);
   translate: 0px var(--button-press-amount);
 }
 
-.currentlySelectedTab .btn-primary #icon{
+.tab .btn-primary #icon{
   -unity-background-image-tint-color: var(--primary-dark-40);
 }
 
-.currentlySelectedTab .btn-primary #fill {
+.tab .btn-primary #fill {
   background-color: var(--primary-light-40);
 }
 
-/* Hides the unselected tab content */
-.unselectedContent {
-
-  display: none;
-}
-
-.display-none{
-    display:none;
-}
 
 /*POPUP*/
 .popup-instance{

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class MainMenuController 
+public class MainMenuController
 {
     private Label CoinText;
     public void Initialize()
@@ -20,26 +20,18 @@ public class MainMenuController
         AttachSettingsButton(asideLeft);
         AssingCoinLabel(header);
         GameData.OnUpdateCoin += OnUpdateCoin;
-        
+
     }
 
     private void AttachSettingsButton(VisualElement parentToSearch)
     {
         //Find SettingsButton and attach its on click events
-        Button settingsButton = parentToSearch.Q<TemplateContainer>("SettingsButton").Q<Button>();
-        settingsButton.clicked += () =>
-        {
-            //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
-            PopupController.ShowPopup(settingsButton.tooltip);
-        };
-
-        //Find WinButton and attach its on click events
-        Button winButton = parentToSearch.Q<TemplateContainer>("WinButton").Q<Button>();
-        winButton.clicked += () =>
-        {
-            //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
-            PopupController.ShowPopup(winButton.tooltip);
-        };
+        //Button settingsButton = parentToSearch.Q<TemplateContainer>("SettingsButton").Q<Button>();
+        //settingsButton.clicked += () =>
+        //{
+        //    //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
+        //    PopupController.ShowPopup(settingsButton.tooltip);
+        //};
     }
 
     private void AssingCoinLabel(VisualElement parentToSearch)

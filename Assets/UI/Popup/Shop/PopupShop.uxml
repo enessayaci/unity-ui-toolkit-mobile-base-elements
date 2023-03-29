@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="ModalHeader" src="project://database/Assets/UI/Components/PopupHeader/PopupHeader.uxml?fileID=9197481963319205126&amp;guid=aec14ff7fbf6746f7a7018384fc8ae06&amp;type=3#PopupHeader" />
+    <ui:VisualElement name="Backdrop">
+        <ui:VisualElement name="BackdropBG" style="flex-grow: 1;" />
+    </ui:VisualElement>
+    <ui:Button display-tooltip-when-elided="true" name="BackgroundButton" style="top: 0; left: 0;" />
+    <ui:VisualElement name="PopupDialog" class="margin-auto bg-secondary">
+        <ui:Instance template="ModalHeader" name="PopupHeader" class="popup-header-instance container">
+            <AttributeOverrides element-name="ModalTitle" text="Settings" />
+            <AttributeOverrides element-name="CloseModalButton" focusable="false" />
+            <AttributeOverrides element-name="PopupTitle" text="Shop" />
+        </ui:Instance>
+        <ui:VisualElement name="PopupBody" class="container">
+            <ui:VisualElement name="PopupBodyShop" tooltip="Settings" class="container active" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                <ui:VisualElement name="Tabs" class="row" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:Label tabindex="-1" text="Skins" display-tooltip-when-elided="true" name="SkinsTab" class="flex-grow text-center tab radius-left-large show border-right-1 bg-primary-light-40" />
+                    <ui:Label tabindex="-1" text="Balls" display-tooltip-when-elided="true" name="BallsTab" class="flex-grow text-center bg-primary tab radius-right-large bg-primary-light-40" />
+                </ui:VisualElement>
+                <ui:VisualElement name="TabContents" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:VisualElement name="SkinsContent" class="show" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                        <ui:Label tabindex="-1" text="Skins Content" display-tooltip-when-elided="true" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="BallsContent" class="display-none" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                        <ui:Label tabindex="-1" text="Balls Content" display-tooltip-when-elided="true" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

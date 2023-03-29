@@ -44,13 +44,13 @@ public class PopupSettingsController
             Debug.Log(evt.newValue);
         });
 
-        //Find WinButton and attach its on click events
-        Button winButton = popupSettings.Q<Button>("WinButtonSettings");
-        winButton.clicked += () =>
-        {
-            //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
-            PopupController.HidePopup("PopupSettings");
-            PopupController.ShowPopup("PopupWin");
-        };
+        ////Find WinButton and attach its on click events
+        //Button winButton = popupSettings.Q<Button>("WinButtonSettings");
+        //winButton.clicked += () =>
+        //{
+        //    //Popup content to show will be detected from clicked button's tooltip value. eg: to show PopupContentSettings, you must set tooltip value of clicked button as "PopupContentSettings".
+        //    PopupController.HidePopup("PopupSettings");
+        //    PopupController.ShowPopup("PopupWin");
+        //};
     }
 }

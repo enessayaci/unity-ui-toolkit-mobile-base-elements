@@ -2,9 +2,9 @@
     <ui:Template name="Label" src="project://database/Assets/UI/Components/Label/Label.uxml?fileID=9197481963319205126&amp;guid=2341bc91a6222a14396459249b9a04ff&amp;type=3#Label" />
     <ui:Template name="Button3DSquare" src="project://database/Assets/UI/Components/Button3DSquare/Button3DSquare.uxml?fileID=9197481963319205126&amp;guid=042dfc044b52d644d9fb6a4349afded1&amp;type=3#Button3DSquare" />
     <ui:Template name="Button3DHorizontal" src="project://database/Assets/UI/Components/Button3DHorizontal/Button3DHorizontal.uxml?fileID=9197481963319205126&amp;guid=3acb0dd1c89a95441a6bc8c5466570d4&amp;type=3#Button3DHorizontal" />
-    <ui:Template name="Loading" src="project://database/Assets/UI/Components/Loading/Loading.uxml?fileID=9197481963319205126&amp;guid=2eb655114c8dc77438712877b863bae4&amp;type=3#Loading" />
     <ui:Template name="ModalContentSettings" src="project://database/Assets/UI/Popup/Settings/PopupSettings.uxml?fileID=9197481963319205126&amp;guid=ba8acbba1fa084863a079f556188a2df&amp;type=3#PopupSettings" />
-    <ui:Template name="PopupWin" src="project://database/Assets/UI/Popup/Win/PopupWin.uxml?fileID=9197481963319205126&amp;guid=a1094eb74eff77841a38012ad3fdbec2&amp;type=3#PopupWin" />
+    <ui:Template name="PopupShop" src="project://database/Assets/UI/Popup/Shop/PopupShop.uxml?fileID=9197481963319205126&amp;guid=dafd9e4c396b944c5a04a2443d3e19a7&amp;type=3#PopupShop" />
+    <ui:Template name="Loading" src="project://database/Assets/UI/Components/Loading/Loading.uxml?fileID=9197481963319205126&amp;guid=2eb655114c8dc77438712877b863bae4&amp;type=3#Loading" />
     <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=8651fb1daa5d7eb49b844520c1329de8&amp;type=3#MainMenu" />
     <ui:VisualElement name="MainMenuView" class="padding-top-offset" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
         <ui:VisualElement name="Header" class="container" style="background-color: rgba(0, 0, 0, 0);">
@@ -17,8 +17,8 @@
                 <ui:Instance template="Button3DSquare" name="SettingsButton" class="btn-3d-square-instance margin-top-base">
                     <AttributeOverrides element-name="Button" tooltip="PopupSettings" focusable="true" />
                 </ui:Instance>
-                <ui:Instance template="Button3DSquare" name="WinButton" class="btn-3d-square-instance margin-top-base">
-                    <AttributeOverrides element-name="Button" tooltip="PopupWin" focusable="true" />
+                <ui:Instance template="Button3DSquare" name="ShopButton" class="btn-3d-square-instance margin-top-base">
+                    <AttributeOverrides element-name="Button" tooltip="PopupShop" focusable="true" />
                 </ui:Instance>
             </ui:VisualElement>
             <ui:VisualElement name="Main">
@@ -41,11 +41,9 @@
         </ui:VisualElement>
         <ui:VisualElement name="Footer" />
     </ui:VisualElement>
-    <ui:Instance template="Loading" name="Loading" />
     <ui:Instance template="ModalContentSettings" name="PopupSettings" class="popup-instance">
         <AttributeOverrides element-name="PopupTitle" text="Settings" />
     </ui:Instance>
-    <ui:Instance template="PopupWin" name="PopupWin" class="popup-instance">
-        <AttributeOverrides element-name="PopupTitle" text="Win" />
-    </ui:Instance>
+    <ui:Instance template="PopupShop" name="PopupShop" class="popup-instance" />
+    <ui:Instance template="Loading" name="Loading" />
 </ui:UXML>

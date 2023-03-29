@@ -11,8 +11,7 @@ public class UIManager : MonoBehaviour
     private MainMenuController _MainMenuController;
     private PopupController _PopupController;
     private PopupSettingsController _PopupSettingsController;
-    private LoadingController _LoadingController;
-
+    private TabController _TabController;
 
 
     private void OnEnable()
@@ -31,8 +30,10 @@ public class UIManager : MonoBehaviour
         _PopupSettingsController = new();
         _PopupSettingsController.Initialize();
 
-        _LoadingController = new();
-        _LoadingController.Initialize();
+        new GameObject("LoadingHelper").AddComponent<LoadingController>();
+
+        _TabController = new();
+        _TabController.Initialize();
 
     }
 

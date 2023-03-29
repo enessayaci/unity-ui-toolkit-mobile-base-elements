@@ -17,11 +17,12 @@ public class LoadingController : MonoBehaviour
     private static bool isLoadingVisible = false;
     private static int loadingShowCount;
 
-    private static LoadingController instance;
+    public static LoadingController instance;
+
     #endregion
-    public void Initialize()
+    private void Start()
     {
-        instance = new GameObject("LoadingHelper").AddComponent<LoadingController>();
+        instance = this;
         AssignDots();
     }
 
