@@ -9,6 +9,7 @@
 #Body {
     flex-grow: 1;
     flex-direction: row;
+    position: relative;
 }
 
 #Header {
@@ -23,11 +24,36 @@
 #AsideRight {
     flex-grow: 1;
     max-width: 80px;
+    position: relative;
 }
 
 #Main {
     flex-shrink: 1;
     flex-grow: 1;
+}
+
+.hide-in-game , .show-in-game{
+    transition: translate 0.35s ease;
+}
+
+#AsideRight > .hidden{
+    translate: 100px 0px;
+}
+
+#AsideLeft > .hidden{
+    translate: -100px 0px;
+}
+
+#Main > #Bottom .hidden{
+    translate: 0px 400px;
+}
+
+#Main > #Top .hidden{
+    translate: 0px -400px;
+}
+
+#Main > #Middle .hidden{
+    translate: 0px 800px;
 }
 
 #Header > #CoinLabel .label-icon {
@@ -43,17 +69,67 @@
 }
 
 #AsideLeft > #SettingsButton #icon {
-    background-image: url('project://database/Assets/UI/Public/Icons/settings.png');
+    background-image: url('project://database/Assets/UI/Public/Icons/settings.png?fileID=2800000&guid=f942527c5ffed5541a7296f1f50a8047&type=3#settings');
 }
 
 #AsideLeft > #SettingsButton #mask-icon {
-    background-image: url('project://database/Assets/UI/Public/Icons/settings.png');
+    background-image: url('project://database/Assets/UI/Public/Icons/settings.png?fileID=2800000&guid=f942527c5ffed5541a7296f1f50a8047&type=3#settings');
 }
 
 #AsideLeft > #ShopButton #icon {
-    background-image: url('project://database/Assets/UI/Public/Icons/shop.png');
+    background-image: url('project://database/Assets/UI/Public/Icons/shop.png?fileID=2800000&guid=e2b8a6c3b7ce445ae9c95408116ab4df&type=3#shop');
 }
 
 #AsideLeft > #ShopButton #mask-icon {
-    background-image: url('project://database/Assets/UI/Public/Icons/shop.png');
+    background-image: url('project://database/Assets/UI/Public/Icons/shop.png?fileID=2800000&guid=e2b8a6c3b7ce445ae9c95408116ab4df&type=3#shop');
+}
+
+#AsideRight > #WatchButton #icon {
+    background-image: url('project://database/Assets/UI/Public/Icons/watch.png');
+}
+
+#AsideRight > #WatchButton #mask-icon {
+    background-image: url('project://database/Assets/UI/Public/Icons/watch.png');
+}
+
+#AsideRight > #MenuTogglerButton {
+    width: var(--button-height-base);
+    height: var(--button-height-base);
+    background-image: url('project://database/Assets/UI/Public/Icons/pause.png');
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-right: var(--padding-base);
+    margin-top: var(--padding-base);
+}
+
+#Body > #TapToPlayArea {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#Body > #TapToPlayArea > Label {
+    color: white;
+    margin-top: 30px;
+    font-size: 28px;
+}
+
+#Body > #TapToPlayArea > #TapToPlayButton {
+    color: white;
+    font-size: 28px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    height: 100%;
+}
+
+#Body > #TapToPlayButton {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 28px;
 }

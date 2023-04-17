@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     private PopupController _PopupController;
     private PopupSettingsController _PopupSettingsController;
     private TabController _TabController;
-
+    private JoystickController _JoystickController;
 
     private void OnEnable()
     {
@@ -34,6 +34,9 @@ public class UIManager : MonoBehaviour
 
         _TabController = new();
         _TabController.Initialize();
+
+        _JoystickController = new();
+        _JoystickController.Initialize();
 
     }
 
